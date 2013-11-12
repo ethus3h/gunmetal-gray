@@ -1,0 +1,17 @@
+{
+    "image":"graphics/explosion.png",
+	"columns":2,
+	"rows":2,
+    "sequences":[
+        {
+            "name":"explode",
+            "looping":false,
+            "frames":[
+                [0, 30],
+                [1, 30],
+                [2, 30],
+                [3, 30]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "image":"graphics/player.png",
+	"columns":8,
+	"rows":4,
+    "sequences":[
+        {
+            "name":"run_r",
+            "looping":true,
+            "frames":[
+                [0, 100],
+                [1, 100],
+                [2, 100],
+                [3, 100],
+                [4, 100],
+                [5, 100]
+            ]
+        },
+        {
+            "name":"stand_r",
+            "looping":true,
+            "frames":[
+                [6, 3000],
+                [7, 300]
+            ]
+        },
+        {
+            "name":"jump_r",
+            "looping":true,
+            "frames":[
+                [3, 1000]
+            ]
+        },
+        {
+            "name":"shoot_r",
+            "looping":false,
+            "frames":[
+                [13, 100]
+            ]
+        },
+        {
+            "name":"hurt_r",
+            "looping":false,
+            "frames":[
+                [8, 100]
+            ]
+        },
+        {
+            "name":"die_r",
+            "looping":false,
+            "frames":[
+                [8, 500],
+                [9, 80],
+                [10, 80],
+                [11, 80],
+                [12, 80],
+                [31, 500]
+            ]
+        },
+        {
+            "name":"spawn",
+            "looping":false,
+            "frames":[
+                [31, 500],
+                [12, 80],
+                [11, 80],
+                [10, 80],
+                [9, 80]
+            ]
+        },
+        {
+            "name":"run_l",
+            "looping":true,
+            "frames":[
+                [16, 100],
+                [17, 100],
+                [18, 100],
+                [19, 100],
+                [20, 100],
+                [21, 100]
+            ]
+        },
+        {
+            "name":"stand_l",
+            "looping":true,
+            "frames":[
+                [22, 3000],
+                [23, 300]
+            ]
+        },
+        {
+            "name":"jump_l",
+            "looping":true,
+            "frames":[
+                [19, 1000]
+            ]
+        },
+        {
+            "name":"shoot_l",
+            "looping":false,
+            "frames":[
+                [29, 100]
+            ]
+        },
+        {
+            "name":"hurt_l",
+            "looping":false,
+            "frames":[
+                [24, 100]
+            ]
+        },
+        {
+            "name":"die_l",
+            "looping":false,
+            "frames":[
+                [24, 500],
+                [25, 80],
+                [26, 80],
+                [27, 80],
+                [28, 80],
+                [31, 500]
+            ]
+        }
+	]
+}
