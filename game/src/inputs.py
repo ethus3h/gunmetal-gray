@@ -16,6 +16,7 @@ home = expanduser("~")
 fname=home+'/.caf.binds'
 #http://stackoverflow.com/questions/3277503/python-read-file-line-by-line-into-array
 #http://stackoverflow.com/questions/82831/how-do-i-check-if-a-file-exists-using-python
+_input_type = "keyboard"
 try:
     with open(fname) as f:
         content = f.readlines()
@@ -26,13 +27,12 @@ try:
 except IOError:
     #no config file exists
     # Defaults
-    _input_type = "keyboard"
     _key_left = pygame.K_LEFT
     _key_right = pygame.K_RIGHT
     _key_up = pygame.K_UP
     _key_down = pygame.K_DOWN
-    _key_jump = pygame.K_RSHIFT
-    _key_fire = pygame.K_SPACE
+    _key_jump = pygame.K_z
+    _key_fire = pygame.K_x
     _key_pause = pygame.K_RETURN
 
 
