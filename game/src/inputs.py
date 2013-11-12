@@ -5,36 +5,17 @@ User Inputs from keyboard, joystick, or XBox controller
 """
 
 import pygame
-import string
 _update_func = None
 
-
-#Check for a keboard binding config file and use it if present
-#http://stackoverflow.com/questions/4028904/how-to-get-the-home-directory-in-python
-from os.path import expanduser
-home = expanduser("~")
-fname=home+'/.caf.binds'
-#http://stackoverflow.com/questions/3277503/python-read-file-line-by-line-into-array
-#http://stackoverflow.com/questions/82831/how-do-i-check-if-a-file-exists-using-python
+# Defaults
 _input_type = "keyboard"
-try:
-    with open(fname) as f:
-        content = f.readlines()
-    #http://scribu.net/blog/python-equivalents-to-phps-foreach.html
-    for conf in content:
-        #http://www.sitepoint.com/forums/showthread.php?588759-Python-equivil-equivalent-to-PHP-s-explode%28%29-function
-        eval('_key_'+conf.split(' ')[0]+' = pygame.K_'+conf.split(' ')[1])
-except IOError:
-    #no config file exists
-    # Defaults
-    _key_left = pygame.K_LEFT
-    _key_right = pygame.K_RIGHT
-    _key_up = pygame.K_UP
-    _key_down = pygame.K_DOWN
-    _key_jump = pygame.K_z
-    _key_fire = pygame.K_x
-    _key_pause = pygame.K_RETURN
-
+_key_left = pygame.K_LEFT
+_key_right = pygame.K_RIGHT
+_key_up = pygame.K_UP
+_key_down = pygame.K_DOWN
+_key_jump = pygame.K_z
+_key_fire = pygame.K_x
+_key_pause = pygame.K_RETURN
 
 # Joystick defaults
 _joystick = None
