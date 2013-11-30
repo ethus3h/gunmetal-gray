@@ -23,10 +23,9 @@ class Enemy(GameObject):
         else:
             self.facing = -1
         self.sprite = components.AnimSprite(self, assets.getSpriteAnim(anim), sequence, spr_offset_x, spr_offset_y)
-        self.mapcollider = components.MapCollider(self, scene.tilemap.foreground, 0, 0, spr_width, spr_height)
-        self.solidcollider = components.SolidSpriteCollider(self, scene.object_mgr.solid, 0, 0, spr_width, spr_height)
+        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, scene.object_mgr.solid, 0, 0, spr_width, spr_height)
         self.spritecollider = components.SpriteCollide(self, 0, 0, spr_width, spr_height)
-        self.physics = components.Physics(self, self.mapcollider, self.solidcollider, friction, air_resistance, bounciness, gravity)
+        self.physics = components.Physics(self, self.solidcollider, friction, air_resistance, bounciness, gravity)
         self.health = components.Health(self, health)
         self.damage_amount = damage_amount
         self.drop_rate = 0.1
@@ -58,11 +57,11 @@ class Enemy(GameObject):
         pass
 
     def checkForEdge(self):
-        return self.mapcollider.getHeight(self.x + self.mapcollider.width / 2 + self.facing * 8, self.y, self.mapcollider.height + 10) == self.y  + self.mapcollider.height + 10
+        return self.solidcollider.mapcollider.getHeight(self.x + self.solidcollider.width / 2 + self.facing * 8, self.y, self.solidcollider.height + 10) == self.y  + self.solidcollider.height + 10
 
     def die(self):
-        x = self.x + self.mapcollider.width / 2 - self.mapcollider.offset_x
-        y = self.y + self.mapcollider.height / 2 - self.mapcollider.offset_y
+        x = self.x + self.solidcollider.width / 2 - self.solidcollider.offset_x
+        y = self.y + self.solidcollider.height / 2 - self.solidcollider.offset_y
         # Explosion graphic
         self.obj_mgr.create("Explosion", None, x, y)
         # Sometimes drop an energy item
@@ -88,6 +87,5 @@ class Enemy(GameObject):
         self.sprite.debug_draw(surface, camera_x, camera_y)
         self.solidcollider.debug_draw(surface, camera_x, camera_y)
         self.spritecollider.debug_draw(surface, camera_x, camera_y)
-        self.mapcollider.debug_draw(surface, camera_x, camera_y)
         self.physics.debug_draw(surface, camera_x, camera_y)
         self.health.debug_draw(surface, camera_x, camera_y)

@@ -10,3 +10,4 @@ from physics import *
 from health import *
 from spritecollide import *
 from solidspritecollider import *
+from solidcollider import *

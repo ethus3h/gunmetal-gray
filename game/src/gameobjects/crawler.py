@@ -22,11 +22,11 @@ class Crawler(Enemy):
     def updateState(self, td):
         turn = False
 
-        if self.mapcollider.on_ground:
+        if self.solidcollider.on_ground:
             ground_in_front = self.checkForEdge()
 
             # Turn around if hit a wall or if there is an edge in front
-            if self.mapcollider.hit_left or self.mapcollider.hit_right or ground_in_front:
+            if self.solidcollider.hit_left or self.solidcollider.hit_right or ground_in_front:
                 self.facing = -self.facing
                 turn = True
 

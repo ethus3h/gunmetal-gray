@@ -17,7 +17,7 @@ class MapCollider:
         self.height = height
         self.step_height = 8
         self.on_ground = False
-        self.max_projection = self.width #* 0.75
+        self.max_projection = self.height #* 0.75
 
         self.hit_left = False
         self.hit_right = False

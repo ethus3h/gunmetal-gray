@@ -32,10 +32,9 @@ class Player(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
         super(Player, self).__init__(scene, name, x, y, **kwargs)
         self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -16, -16)
-        self.mapcollide = components.MapCollider(self, scene.tilemap.foreground, -5, -9, 11, 24)
-        self.solidcollide = components.SolidSpriteCollider(self, self.obj_mgr.solid, -5, -9, 11, 24)
+        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -5, -9, 11, 24)
         self.collider = components.SpriteCollide(self, -5, -9, 11, 24)
-        self.physics = components.Physics(self, self.mapcollide, self.solidcollide, 0.03)
+        self.physics = components.Physics(self, self.solidcollider, 0.03)
         self.health = components.Health(self)
 
         self.sound_hurt = assets.getSound("sounds/hurt.wav")
@@ -83,15 +82,15 @@ class Player(GameObject):
                 self.hurt_timer -= td
                 self.updateControls(td)
 
-            was_on_ground = self.mapcollide.on_ground
+            was_on_ground = self.solidcollider.on_ground
 
             self.physics.update(td)
 
             if self.state == STATE_ALIVE:
-                if not was_on_ground and self.mapcollide.on_ground:
+                if not was_on_ground and self.solidcollider.on_ground:
                     self.sound_land.play()
 
-                for tile, tile_pos, pixel_pos in self.mapcollide.iterTiles():
+                for tile, tile_pos, pixel_pos in self.solidcollider.mapcollider.iterTiles():
                     self.processTile(td, tile, tile_pos, pixel_pos)
 
             self.collider.update()
@@ -109,7 +108,7 @@ class Player(GameObject):
                 self.obj_mgr.create("PlayerLaser", None, self.x + 10, self.y + 4, direction=self.facing)
                 self.sprite.play("shoot_r")
 
-        if self.mapcollide.on_ground:
+        if self.solidcollider.on_ground:
             self.physics.applyForce(inputs.getHorizontal() * self.run_accel * td, 0)
 
             if inputs.getJumpPress():
@@ -146,7 +145,7 @@ class Player(GameObject):
                     self.sprite.play("stand_r")
 
         elif self.anim_state != ANIM_DIE:
-            if self.mapcollide.on_ground and not self.physics.jumping:
+            if self.solidcollider.on_ground and not self.physics.jumping:
                 if self.anim_state == ANIM_STAND:
                     if inputs.getHorizontal() < -0.01:
                         self.anim_state = ANIM_RUN
@@ -175,7 +174,7 @@ class Player(GameObject):
                         self.sprite.play("run_r")
 
                 elif self.anim_state == ANIM_JUMP:
-                    if self.mapcollide.on_ground:
+                    if self.solidcollider.on_ground:
                         self.anim_state = ANIM_STAND
                         if self.facing == LEFT:
                             self.sprite.play("stand_l")
@@ -245,6 +244,6 @@ class Player(GameObject):
         super(Player, self).debug_draw(surface, camera_x, camera_y)
         self.sprite.debug_draw(surface, camera_x, camera_x)
         self.collider.debug_draw(surface, camera_x, camera_y)
-        self.mapcollide.debug_draw(surface, camera_x, camera_y)
+        self.solidcollider.debug_draw(surface, camera_x, camera_y)
         self.physics.debug_draw(surface, camera_x, camera_y)
         self.health.debug_draw(surface, camera_x, camera_y)
