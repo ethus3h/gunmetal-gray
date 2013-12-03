@@ -1,1 +1,1 @@
-{"map": {"filename": "maps/level_2.tmx"}}
+{"map": {"spawn": "emt_2", "ship_landed": true, "coins": ["coin_1", "coin_2", "coin_3", "coin_5"], "filename": "maps/level_2.tmx"}}

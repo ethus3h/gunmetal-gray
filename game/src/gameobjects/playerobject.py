@@ -31,9 +31,9 @@ RIGHT = 1
 class Player(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
         super(Player, self).__init__(scene, name, x, y, **kwargs)
-        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -16, -16)
-        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -5, -9, 11, 24)
-        self.collider = components.SpriteCollide(self, -5, -9, 11, 24)
+        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -24, -32)
+        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -8, -15, 14, 46)
+        self.collider = components.SpriteCollide(self, -8, -15, 14, 46)
         self.physics = components.Physics(self, self.solidcollider, 0.03)
         self.health = components.Health(self)
 
