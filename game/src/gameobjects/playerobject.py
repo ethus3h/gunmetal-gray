@@ -96,6 +96,9 @@ class Player(GameObject):
             self.collider.update()
             self.collider.collide(self.obj_mgr.player_touchable)
 
+            if self.y > self.scene.tilemap.pixel_height + 100:
+                self.die()
+
         self.updateAnim(td)
 
     def updateControls(self, td):
