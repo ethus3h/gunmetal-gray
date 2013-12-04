@@ -36,6 +36,15 @@ class Widget(object):
         pass
 
 
+class Image(Widget):
+    def __init__(self, x, y, filename):
+        super(Image, self).__init__(x,y)
+        self.image = assets.getImage(filename)
+
+    def draw(self, surface, x, y):
+        surface.blit(self.image, (x+self.x, y+self.y))
+
+
 class Text(Widget):
     """Simple line of text"""
     def __init__(self, x, y, text, font=None, color=(255,255,255)):
@@ -67,6 +76,8 @@ class ScrollText(Widget):
         if font is None:
             font = assets.getFont(None, 10)
         self.font = font
+        self.line_height = self.font.render("X", False, (0,0,0)).get_height()
+        self.height = (self.height / self.line_height) * self.line_height
         self.atTop = True
         self.atBottom = False
         self.setText(text)
@@ -76,7 +87,6 @@ class ScrollText(Widget):
         line_images = []
         x = 0
         y = 0
-        line_height = self.font.render("X", False, COLORS["white"]).get_height()
         # Simple method for color switching.
         for line in text.split("\n"):
             color_mode = True
@@ -88,7 +98,7 @@ class ScrollText(Widget):
                     txt_img = self.font.render(text, False, color)
                     line_images.append((x, y, txt_img))
                     x += txt_img.get_width()
-            y += line_height
+            y += self.line_height
             x = 0
 
         self.full_image = pygame.Surface((self.width, y), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -156,7 +166,7 @@ class Button(Text):
 
 
 class UI:
-    def __init__(self, x, y):
+    def __init__(self, x, y, visible=True):
         """User interface for showing and interacting with widgets"""
         # TODO: Change how to select interactive widgets (maybe an interactive list)
         self.x = x
@@ -164,6 +174,7 @@ class UI:
         self.widgets = []
         self.selected = 0
         self.pointer = assets.getImage("graphics/pointer.png")
+        self.visible = visible
 
     def add(self, widget):
         """Add a widget"""
@@ -197,8 +208,9 @@ class UI:
 
     def draw(self, surface):
         """Draw the widgets and a cursor indicating the currently selected interactive widget"""
-        for widget in self.widgets:
-            widget.draw(surface, self.x, self.y)
+        if self.visible:
+            for widget in self.widgets:
+                widget.draw(surface, self.x, self.y)
 
-        selected = self.widgets[self.selected]
-        surface.blit(self.pointer, (self.x + selected.x - 10, self.y + selected.y + 1))
+            selected = self.widgets[self.selected]
+            surface.blit(self.pointer, (self.x + selected.x - 10, self.y + selected.y + 1))

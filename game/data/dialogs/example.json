@@ -1,0 +1,30 @@
+{
+	"dialog": [
+		{
+			"x": 10,
+			"y": 10,
+			"delay": 0,
+			"background":"graphics/dialog.png",
+			"picture":"graphics/coin.png",
+			"side":"right",
+			"lines":["This is some example text."]
+		},
+		{
+			"x": 150,
+			"y": 150,
+			"delay": 200,
+			"background":"graphics/dialog.png",
+			"picture":"graphics/fish.png",
+			"side":"left",
+			"lines":[
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text.",
+				"This is some example text.  This is some example text."
+			]
+		}
+	]
+}

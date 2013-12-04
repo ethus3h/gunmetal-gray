@@ -18,24 +18,7 @@ class PlayState(State):
     def __init__(self):
         super(PlayState, self).__init__()
         self.init = True
-        self.help_text="""                                  ~yellow~*** HELP ***~white~
-In ~yellow~Cat Astro Fee ~white~you play as an astronaut who happens to
-also be a cat.  Why is he a cat?  For the pun, of course!
-On each planet, he has to collect enough ~yellow~coins ~white~to pay to
-get past the ~yellow~space toll booths~white~.
-
-Controls can be configured in ~yellow~data/config.json~white~, but the
-default settings are ~yellow~keyboard ~white~with the '~yellow~ARROW KEYS~white~' to move,
-'~yellow~Z~white~' to jump, '~yellow~X~white~' to shoot, and '~yellow~ENTER~white~' to pause the game.
-~yellow~EMTs~white~ (Emergency Medical Teleporters) are used to save your
-progress and act as checkpoints you can respawn at after
-losing all your health.
-Watch out for enemies, spikes, lava, and other hazards.
-If you take damage, a refreshing ~yellow~Fish Soda~white~ refills a
-little bit of health.
-After collecting all the ~yellow~coins~white~ in the level, return to the
-~yellow~space ship~white~ to blast off and head to the next planet!
-"""
+        self.help_text="dialogs/help.json"
         self.scene = None
 
     def setPlayer(self, player):
@@ -109,5 +92,5 @@ After collecting all the ~yellow~coins~white~ in the level, return to the
         """Should return true if game is still playing and false if the window should close"""
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_F1:
-                statemgr.switch("dialog", text=self.help_text)
+                statemgr.switch("dialog", filename=self.help_text)
         return True

@@ -1,0 +1,25 @@
+{
+	"dialog": [
+		{
+			"lines": [
+				"                                  ~yellow~*** HELP ***~white~",
+				"In ~yellow~Cat Astro Fee ~white~you play as an astronaut who happens to",
+				"also be a cat.  Why is he a cat?  For the pun, of course!",
+				"On each planet, he has to collect enough ~yellow~coins ~white~to pay to",
+				"get past the ~yellow~space toll booths~white~.",
+				"",
+				"Controls can be configured in ~yellow~data/config.json~white~, but the",
+				"default settings are ~yellow~keyboard ~white~with the '~yellow~ARROW KEYS~white~' to move,",
+				"'~yellow~Z~white~' to jump, '~yellow~X~white~' to shoot, and '~yellow~ENTER~white~' to pause the game.",
+				"~yellow~EMTs~white~ (Emergency Medical Teleporters) are used to save your",
+				"progress and act as checkpoints you can respawn at after",
+				"losing all your health.",
+				"Watch out for enemies, spikes, lava, and other hazards.",
+				"If you take damage, a refreshing ~yellow~Fish Soda~white~ refills a",
+				"little bit of health.",
+				"After collecting all the ~yellow~coins~white~ in the level, return to the",
+				"~yellow~space ship~white~ to blast off and head to the next planet!"
+			]
+		}
+	]
+}
