@@ -59,10 +59,13 @@ class ObjectManager:
         if name is None or name=="":
             name = self._auto_name()
 
-        obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
-        self.objects[name] = obj
-        obj.init()
-        return obj
+        if hasattr(gameobjects, class_name):
+            obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
+            self.objects[name] = obj
+            obj.init()
+            return obj
+        print class_name, "class not an object type."
+        return None
 
     def bulkCreate(self, toCreate):
         """toCreate is a list of tuples of the form (class_name, name, x, y, kwargs)"""
@@ -71,9 +74,12 @@ class ObjectManager:
         for class_name, name, x, y, kwargs in toCreate:
             if name is None or name=="":
                 name = self._auto_name()
-            obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
-            self.objects[name] = obj
-            newObjects.append(obj)
+            if hasattr(gameobjects, class_name):
+                obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
+                self.objects[name] = obj
+                newObjects.append(obj)
+            else:
+                print class_name, "class not an object type."
 
         # Done in two steps because objects need to be available for other objects to subscribe to them
         for obj in newObjects:

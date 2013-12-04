@@ -222,11 +222,6 @@ class Player(GameObject):
         else:
             self.sprite.play("die_r")
 
-    def touchShip(self, gameobject):
-        if self.scene.state.coins == self.scene.state.max_coins:
-            self.kill()
-            gameobject.call("doLaunch")
-
     def spriteCollide(self, gameobject, collider):
         pass
 

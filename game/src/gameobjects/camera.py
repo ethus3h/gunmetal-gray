@@ -17,8 +17,8 @@ class Camera(GameObject):
         self.height = metrics.SCREEN_HEIGHT
         self.offset_x = -self.width / 2
         self.offset_y = -self.height / 2
-        self.x = x + self.offset_x
-        self.y = y + self.offset_y - 16
+        self.x = min(max(x + self.offset_x, 0), scene.tilemap.pixel_width - metrics.SCREEN_WIDTH)
+        self.y = min(max(y + self.offset_y - 16,0), scene.tilemap.pixel_height - metrics.SCREEN_HEIGHT)
         self.target = None
         self.state = DIRECT
         self.dead_half_width = 8

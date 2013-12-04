@@ -9,11 +9,7 @@ from camera import Camera
 from playerobject import Player
 from energy import Energy
 from playerlaser import PlayerLaser
-from ship import Ship
-from emt import EMT
 from crawler import Crawler
 from explosion import Explosion
 from spawner import Spawner
 from despawner import Despawner
-from coin import Coin
-from tentacle import Tentacle

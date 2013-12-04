@@ -46,14 +46,11 @@ class Scene:
         music.set_level_default(self.music)
         music.play_level_music()
 
-        # Camera initialization properties
-        self.camera = Camera(self, "camera", int(tmx.properties.get("camera_x", 0)), int(tmx.properties.get("camera_y", 0)))
-
-        # TODO: Camera state (normal, follow, move to, etc.)
-        # TODO: Camera state parameters
-
         # Generate tile map using TMX tile map data
         self.tilemap = tilemap.TileMap(tmx)
+
+        # Camera initialization properties
+        self.camera = Camera(self, "camera", int(tmx.properties.get("camera_x", 0)), int(tmx.properties.get("camera_y", 0)))
 
         # Pass TMX object data to Object Manager to generate objects
         self.object_mgr.createFromTMX(tmx)

@@ -3,9 +3,7 @@
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
-  <property name="coins" value="5"/>
-  <property name="next_map" value="maps/level_2.tmx"/>
-  <property name="music" value="music/test_music_1.mp3" />
+  <property name="music" value="music/test_music_1.mp3"/>
  </properties>
  <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16">
   <image source="graphics/tileset.png" width="256" height="256"/>
@@ -374,19 +372,11 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="100">
-  <object type="Energy" gid="226" x="208" y="176"/>
-  <object type="Energy" gid="226" x="304" y="176"/>
-  <object type="Energy" gid="226" x="848" y="800"/>
-  <object name="ship" type="Ship" gid="225" x="112" y="192"/>
-  <object name="emt_1" type="EMT" gid="255" x="240" y="208"/>
-  <object name="emt_2" type="EMT" gid="255" x="624" y="832"/>
-  <object type="Crawler" gid="244" x="512" y="176"/>
-  <object type="Crawler" gid="244" x="560" y="224"/>
-  <object name="coin_1" type="Coin" gid="227" x="368" y="192"/>
-  <object name="coin_2" type="Coin" gid="227" x="736" y="208"/>
-  <object name="coin_3" type="Coin" gid="227" x="1264" y="480"/>
-  <object name="coin_4" type="Coin" gid="227" x="560" y="784"/>
-  <object name="coin_5" type="Coin" gid="227" x="976" y="800"/>
-  <object type="Tentacle" gid="243" x="448" y="176"/>
+  <object name="start" type="Spawner" x="112" y="176" width="16" height="16">
+   <properties>
+    <property name="obj" value="Player"/>
+    <property name="rate" value="0"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

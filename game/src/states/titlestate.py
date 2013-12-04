@@ -26,8 +26,7 @@ class TitleState(State):
 
     def btnNewGame(self):
         """Called when the player selects New Game.  Clear state variables, save them, then starts playing."""
-        statevars.variables = {}
-        statevars.save("saves/save_1.json")
+        statevars.new_file("saves/save_1.json")
         statemgr.switch("play")
 
     def gainFocus(self, previous, previous_name, *args, **kwargs):

@@ -1,1 +1,1 @@
-{"map": {"filename": "maps/level_2.tmx"}}
+{"spawn": "start", "gold": 0, "maps": {"maps/start.tmx": {"events": []}}, "inventory": [], "events": [], "ammo": 25, "map_file": "maps/start.tmx"}

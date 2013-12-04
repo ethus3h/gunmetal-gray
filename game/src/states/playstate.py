@@ -36,35 +36,15 @@ little bit of health.
 After collecting all the ~yellow~coins~white~ in the level, return to the
 ~yellow~space ship~white~ to blast off and head to the next planet!
 """
-        self.coins = 0
-        self.max_coins = 0
-        self.coin_img = assets.getImage("graphics/mini_coin.png")
-        self.next_map = None
-        self.updateCoins()
         self.scene = None
 
     def setPlayer(self, player):
         """Link up player object with the health bar"""
         self.energy_bar.setHealth(player.health)
 
-    def getCoin(self):
-        """Get a coin.  Called by player when it touches a coin object."""
-        self.coins += 1
-        self.updateCoins()
-
-    def updateCoins(self):
-        """Change display for how many coins have been collected"""
-        self.coin_txt = assets.getFont(None, 10).render(str(self.coins)+" / "+str(self.max_coins), False, (255,255,255))
-
     def respawn(self):
         """Reload the level when the player respawns"""
         statevars.load()
-        self.start()
-
-    def nextLevel(self):
-        """Go to the next level"""
-        statevars.variables["map"] = {"filename":self.next_map}
-        statevars.save()
         self.start()
 
     def start(self):
@@ -73,23 +53,15 @@ After collecting all the ~yellow~coins~white~ in the level, return to the
         self.energy_bar = energybar.EnergyBar(None, 4, 4)
 
         # Get the map state variable
-        map = statevars.variables.get("map")
+        map_file = statevars.variables.get("map_file")
+        map = statevars.variables.get("maps").get(map_file)
+
         if map is None:
             # Since there is no map variable (like when playing a new game), we'll create one and start at the start.
-            map_file = "maps/start.tmx"
-            map = {}
-            statevars.variables["map"] = map
-            map["filename"] = map_file
-            map["spawn"] = None
-            self.coins = 0
-            statevars.save()
-        else:
-            # Get which map file should be loaded and the current collected coins count
-            map_file = map.get("filename")
-            self.coins = len(map.get("coins", []))
-            if map_file is None:
-                # If the map filename is not present, start at the start
-                map_file = "maps/start.tmx"
+            map = {
+                "events":[]
+            }
+            statevars.variables["maps"][map_file] = map
 
         if self.scene is not None:
             # Get rid of old scene
@@ -99,18 +71,11 @@ After collecting all the ~yellow~coins~white~ in the level, return to the
         self.scene = scene.Scene(self, map_file)
 
         # Get the spawn point for the player.  It would be None if the player has not saved in this map yet.
-        spawn = map.get("spawn")
+        spawn = statevars.variables.get("spawn")
         if spawn is not None:
             # Spawn the player at the specified spawn point
             obj = self.scene.object_mgr.get(spawn)
             obj.call("spawnPlayer")
-
-        # Get how many coins are in this map
-        self.max_coins = int(self.scene.properties.get("coins", 0))
-        self.updateCoins()
-
-        # The map that should be loaded after the player completes this one
-        self.next_map = self.scene.properties.get("next_map")
 
     def gainFocus(self, previous, previous_name, *args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
@@ -136,8 +101,6 @@ After collecting all the ~yellow~coins~white~ in the level, return to the
 
         # Energy bar and coins amount
         self.energy_bar.draw(surface)
-        surface.blit(self.coin_img, (150, 5))
-        surface.blit(self.coin_txt, (160, 5))
 
     def debug_draw(self, surface):
         self.scene.debug_draw(surface)

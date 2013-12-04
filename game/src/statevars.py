@@ -9,6 +9,25 @@ Keeps track of game accomplishments, past events, and current state values.  Use
 
 import assets
 
+# TODO: Implement actually using this instead of the old save format
+empty_file = {
+    "map_file": "maps/start.tmx",  # The map that should be loaded on start
+    "spawn": "start",             # The spawn point of the player
+
+    "gold": 0,    # Gold the player has collected
+    "ammo": 25,   # Ammunition they player has
+
+    "inventory": [],  # Items the player has collected
+    "events": [],     # Events that have taken place over the course of the game (can be used to track story progress)
+
+    "maps": {
+        "maps/start.tmx": {
+            "events": []  # Events that have taken place on this map (used to determine if changes should be made)
+        }
+    }
+}
+
+
 _filename = None
 variables = {}
 
@@ -20,6 +39,7 @@ def load(filename=None):
     variables = assets.getData(filename, False)
     _filename = filename
 
+
 def save(filename=None):
     global _filename
 
@@ -29,3 +49,10 @@ def save(filename=None):
     _filename = filename
 
     assets.saveData(variables, filename)
+
+
+def new_file(filename=None):
+    global variables
+
+    variables = empty_file
+    save(filename)
