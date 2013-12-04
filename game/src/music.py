@@ -25,8 +25,11 @@ def play(filename):
     if filename != current_music:
         previous_music = current_music
         current_music = filename
-        pygame.mixer.music.load(assets.path(filename))
-        pygame.mixer.music.play(-1)
+        try:
+            pygame.mixer.music.load(assets.path(filename))
+            pygame.mixer.music.play(-1)
+        except:
+            print 'No music found for level.'
         is_playing = True
     else:
         if not is_playing:
