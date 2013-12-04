@@ -5,6 +5,7 @@
   <property name="camera_y" value="176"/>
   <property name="coins" value="5"/>
   <property name="next_map" value="maps/level_2.tmx"/>
+  <property name="music" value="music/test_music_2.mp3" />
  </properties>
  <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16">
   <image source="graphics/tileset.png" width="256" height="256"/>

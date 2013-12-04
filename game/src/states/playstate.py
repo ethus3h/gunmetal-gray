@@ -12,6 +12,7 @@ import energybar
 import statevars
 import pygame
 import assets
+import music
 
 class PlayState(State):
     def __init__(self):
@@ -116,6 +117,7 @@ After collecting all the ~yellow~coins~white~ in the level, return to the
         if self.init:
             self.init = False
             self.start()
+        music.play_level_music()
 
     def loseFocus(self, next, next_name, *args, **kwargs):
         """What should be done when the state loses focus.  Next is the new state that is being switched to."""

@@ -13,6 +13,7 @@ import tmxlib
 import assets
 import tilemap
 import objectmgr
+import music
 
 from gameobjects import Camera
 
@@ -41,6 +42,9 @@ class Scene:
         self.name = tmx.properties.get("name", "")
         self.script = tmx.properties.get("script")
         self.music = tmx.properties.get("music", "music.ogg")
+
+        music.set_level_default(self.music)
+        music.play_level_music()
 
         # Camera initialization properties
         self.camera = Camera(self, "camera", int(tmx.properties.get("camera_x", 0)), int(tmx.properties.get("camera_y", 0)))

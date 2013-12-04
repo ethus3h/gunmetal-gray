@@ -8,6 +8,7 @@ from states import State
 import statemgr
 import inputs
 import assets
+import music
 import pygame
 
 class PauseState(State):
@@ -22,6 +23,7 @@ class PauseState(State):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
         self.old_state = previous
         self.old_state_name = previous_name
+        music.pause()
 
     def loseFocus(self, next, next_name, *args, **kwargs):
         """What should be done when the state loses focus.  Next is the new state that is being switched to."""
