@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="16" tileheight="16">
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
   <property name="music" value="music/test_music_1.mp3"/>
  </properties>
- <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16">
-  <image source="graphics/tileset.png" width="256" height="256"/>
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32">
+  <image source="graphics/tileset.png" width="512" height="512"/>
   <tile id="1">
    <properties>
     <property name="left_height" value="0"/>
-    <property name="right_height" value="8"/>
+    <property name="right_height" value="16"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
-    <property name="left_height" value="8"/>
-    <property name="right_height" value="16"/>
+    <property name="left_height" value="16"/>
+    <property name="right_height" value="32"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
@@ -33,14 +33,14 @@
   </tile>
   <tile id="5">
    <properties>
-    <property name="left_height" value="16"/>
-    <property name="right_height" value="8"/>
+    <property name="left_height" value="32"/>
+    <property name="right_height" value="16"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
-    <property name="left_height" value="8"/>
+    <property name="left_height" value="16"/>
     <property name="right_height" value="0"/>
     <property name="type" value="slope"/>
    </properties>
@@ -68,7 +68,7 @@
   <tile id="16">
    <properties>
     <property name="left_height" value="0"/>
-    <property name="right_height" value="16"/>
+    <property name="right_height" value="32"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
@@ -104,7 +104,7 @@
   </tile>
   <tile id="23">
    <properties>
-    <property name="left_height" value="16"/>
+    <property name="left_height" value="32"/>
     <property name="right_height" value="0"/>
     <property name="type" value="slope"/>
    </properties>
@@ -147,14 +147,14 @@
   <tile id="49">
    <properties>
     <property name="left_height" value="0"/>
-    <property name="right_height" value="8"/>
+    <property name="right_height" value="16"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
   <tile id="50">
    <properties>
-    <property name="left_height" value="8"/>
-    <property name="right_height" value="16"/>
+    <property name="left_height" value="16"/>
+    <property name="right_height" value="32"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
@@ -170,14 +170,14 @@
   </tile>
   <tile id="53">
    <properties>
-    <property name="left_height" value="16"/>
-    <property name="right_height" value="8"/>
+    <property name="left_height" value="32"/>
+    <property name="right_height" value="16"/>
     <property name="type" value="slope"/>
    </properties>
   </tile>
   <tile id="54">
    <properties>
-    <property name="left_height" value="8"/>
+    <property name="left_height" value="16"/>
     <property name="right_height" value="0"/>
     <property name="type" value="slope"/>
    </properties>

@@ -31,9 +31,9 @@ RIGHT = 1
 class Player(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
         super(Player, self).__init__(scene, name, x, y, **kwargs)
-        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -24, -32)
-        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -8, -15, 14, 46)
-        self.collider = components.SpriteCollide(self, -8, -15, 14, 46)
+        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -48, -65)
+        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -16, -30, 28, 92)
+        self.collider = components.SpriteCollide(self, -16, -30, 28, 92)
         self.physics = components.Physics(self, self.solidcollider, 0.03)
         self.health = components.Health(self)
 
@@ -43,14 +43,14 @@ class Player(GameObject):
 
         self.state = STATE_ALIVE
         self.anim_state = ANIM_STAND
-        self.run_accel = 0.004
-        self.air_accel = 0.00025
-        self.max_air_speed = 0.2
+        self.run_accel = 0.004*1.5
+        self.air_accel = 0.00025*1.5
+        self.max_air_speed = 0.2*1.5
         self.facing = RIGHT
         self.jump_timer = 0
         self.max_jump_timer = 150
-        self.jump_speed = -0.17
-        self.jump_thrust = -0.002
+        self.jump_speed = -0.17*1.25
+        self.jump_thrust = -0.002*1.4
         self.hurt_timer = 0
         self.max_hurt_timer = 300
         self.scene.setPlayer(self)
