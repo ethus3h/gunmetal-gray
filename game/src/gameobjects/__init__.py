@@ -13,3 +13,4 @@ from crawler import Crawler
 from explosion import Explosion
 from spawner import Spawner
 from despawner import Despawner
+from image import Image, AnimImage
