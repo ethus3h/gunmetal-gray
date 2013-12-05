@@ -22,12 +22,12 @@ class TitleState(State):
     def btnContinue(self):
         """Called when player selects Continue.  Loads the old save file then starts playing."""
         statevars.load("saves/save_1.json")
-        statemgr.switch("play")
+        statemgr.transition_switch("play", "Blink", "Spotlight")
 
     def btnNewGame(self):
         """Called when the player selects New Game.  Clear state variables, save them, then starts playing."""
         statevars.new_file("saves/save_1.json")
-        statemgr.switch("play")
+        statemgr.transition_switch("play", "Blink", "Spotlight")
 
     def gainFocus(self, previous, previous_name, *args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""

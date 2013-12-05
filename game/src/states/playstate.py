@@ -11,8 +11,8 @@ import statemgr
 import energybar
 import statevars
 import pygame
-import assets
 import music
+import statemgr
 
 class PlayState(State):
     def __init__(self):
@@ -28,7 +28,9 @@ class PlayState(State):
     def respawn(self):
         """Reload the level when the player respawns"""
         statevars.load()
-        self.start()
+        #self.start()
+        self.init = True
+        statemgr.transition_switch("play", "Fade", "Fade")
 
     def start(self):
         """Initialization for the play state"""
