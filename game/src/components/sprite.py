@@ -49,7 +49,7 @@ class StaticSprite(pygame.sprite.Sprite):
 class AnimSprite(StaticSprite):
     """An animated graphic to be displayed on the screen."""
     def __init__(self, gameobject, anim, sequence, offset_x=0, offset_y=0, layer=1):
-        StaticSprite.__init__(self, gameobject, anim.getSequence(sequence).frames[0][0], offset_x, offset_y)
+        StaticSprite.__init__(self, gameobject, anim.getSequence(sequence).frames[0][0], offset_x, offset_y, layer)
         self.animation = anim
         self.cursor = animation.SimpleCursor()
         self.cursor.play(anim.getSequence(sequence))

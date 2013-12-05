@@ -378,5 +378,11 @@
     <property name="rate" value="0"/>
    </properties>
   </object>
+  <object type="AnimImage" x="224" y="176" width="32" height="32">
+   <properties>
+    <property name="filename" value="anims/jet.json"/>
+    <property name="sequence" value="jet"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
