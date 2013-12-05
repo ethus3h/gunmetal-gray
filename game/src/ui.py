@@ -51,7 +51,7 @@ class Text(Widget):
         super(Text, self).__init__(x, y)
         self.interactive = False
         if font is None:
-            font = assets.getFont(None, 16)
+            font = assets.getFont(None, 19)
         self.font = font
         self.setText(text, color)
 
@@ -74,7 +74,7 @@ class ScrollText(Widget):
         self.scroll_pos = 0
         self.scroll_stop = 0
         if font is None:
-            font = assets.getFont(None, 16)
+            font = assets.getFont(None, 19)
         self.font = font
         self.line_height = self.font.render("X", True, (0,0,0)).get_height()
         self.height = (self.height / self.line_height) * self.line_height

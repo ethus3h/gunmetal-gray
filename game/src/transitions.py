@@ -50,6 +50,11 @@ class Fade(Transition):
         self.delay = transition_delay
         self.color = transition_color
         self.surface = pygame.Surface((metrics.SCREEN_WIDTH, metrics.SCREEN_HEIGHT), pygame.HWSURFACE | pygame.SRCALPHA)
+        if direction == OUT:
+            self.surface.fill((0,0,0,0))
+        else:
+            self.surface.fill(self.color)
+
 
     def update(self, td):
         self.delay -= td

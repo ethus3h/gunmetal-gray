@@ -5,7 +5,7 @@
 			"y": 10,
 			"delay": 0,
 			"background":"graphics/dialog.png",
-			"picture":"graphics/coin.png",
+			"picture":"graphics/portrait_example.png",
 			"side":"right",
 			"lines":["This is some example text."]
 		},
@@ -13,17 +13,28 @@
 			"x": 150,
 			"y": 150,
 			"delay": 200,
-			"background":"graphics/dialog.png",
-			"picture":"graphics/fish.png",
+			"background":"graphics/dialog_sign.png",
+			"picture":"graphics/portrait_example.png",
 			"side":"left",
 			"lines":[
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text.",
-				"This is some example text.  This is some example text."
+				"~black~This is some example text.  This is some example text.",
+				"~red~This is some example text.  This is some example text.",
+				"~green~This is some example text.  This is some example text.",
+				"~yellow~This is some example text.  This is some example text.",
+				"~blue~This is some example text.  This is some example text.",
+				"~white~This is some example text.  This is some example text.",
+				"~black~This is some example text.  This is some example text.",
+				"~red~This is some example text.  This is some example text.",
+				"~green~This is some example text.  This is some example text.",
+				"~yellow~This is some example text.  This is some example text.",
+				"~blue~This is some example text.  This is some example text.",
+				"~white~This is some example text.  This is some example text.",
+				"~black~This is some example text.  This is some example text.",
+				"~red~This is some example text.  This is some example text.",
+				"~green~This is some example text.  This is some example text.",
+				"~yellow~This is some example text.  This is some example text.",
+				"~blue~This is some example text.  This is some example text.",
+				"~white~This is some example text.  This is some example text."
 			]
 		}
 	]
