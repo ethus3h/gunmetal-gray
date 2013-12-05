@@ -51,14 +51,14 @@ class Text(Widget):
         super(Text, self).__init__(x, y)
         self.interactive = False
         if font is None:
-            font = assets.getFont(None, 10)
+            font = assets.getFont(None, 16)
         self.font = font
         self.setText(text, color)
 
     def setText(self, text, color=(255,255,255)):
         # TODO: Allow this to use multi color text like ScrollText can
         self.text = text
-        self.text_image = self.font.render(text, False, color)
+        self.text_image = self.font.render(text, True, color)
 
     def draw(self, surface, x, y):
         surface.blit(self.text_image, (x + self.x, y + self.y))
@@ -74,9 +74,9 @@ class ScrollText(Widget):
         self.scroll_pos = 0
         self.scroll_stop = 0
         if font is None:
-            font = assets.getFont(None, 10)
+            font = assets.getFont(None, 16)
         self.font = font
-        self.line_height = self.font.render("X", False, (0,0,0)).get_height()
+        self.line_height = self.font.render("X", True, (0,0,0)).get_height()
         self.height = (self.height / self.line_height) * self.line_height
         self.atTop = True
         self.atBottom = False
@@ -95,7 +95,7 @@ class ScrollText(Widget):
                 if color_mode:
                     color = COLORS[text]
                 else:
-                    txt_img = self.font.render(text, False, color)
+                    txt_img = self.font.render(text, True, color)
                     line_images.append((x, y, txt_img))
                     x += txt_img.get_width()
             y += self.line_height
