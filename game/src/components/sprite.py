@@ -10,15 +10,20 @@ import animation
 
 class StaticSprite(pygame.sprite.Sprite):
     """A still image to be displayed on the screen."""
-    def __init__(self, gameobject, image, offset_x=0, offset_y=0):
+    def __init__(self, gameobject, image, offset_x=0, offset_y=0, layer=1):
         pygame.sprite.Sprite.__init__(self)
 
+        # It may be better to have this some other way, but oh well
+        self.layers = [gameobject.obj_mgr.visible_back, gameobject.obj_mgr.visible, gameobject.obj_mgr.visible_front]
+
+        self.layer = layer
         self.image = image
         self.rect = image.get_rect()
         self.gameobject = gameobject
         self.offset_x = offset_x
         self.offset_y = offset_y
-        gameobject.obj_mgr.visible.add(self)
+        self.layers[layer].add(self)
+        #gameobject.obj_mgr.visible.add(self)
         self.visible = True
 
     def update(self, camera_x, camera_y):
@@ -31,9 +36,9 @@ class StaticSprite(pygame.sprite.Sprite):
 
     def setVisibility(self, visible):
         if visible and not self.visible:
-            self.gameobject.obj_mgr.visible.add(self)
+            self.layers[layer].add(self)
         if not visible and self.visible:
-            self.gameobject.obj_mgr.visible.remove(self)
+            self.layers[layer].remove(self)
         self.visible = visible
 
     def debug_draw(self, surface, camera_x, camera_y):
@@ -43,7 +48,7 @@ class StaticSprite(pygame.sprite.Sprite):
 
 class AnimSprite(StaticSprite):
     """An animated graphic to be displayed on the screen."""
-    def __init__(self, gameobject, anim, sequence, offset_x=0, offset_y=0):
+    def __init__(self, gameobject, anim, sequence, offset_x=0, offset_y=0, layer=1):
         StaticSprite.__init__(self, gameobject, anim.getSequence(sequence).frames[0][0], offset_x, offset_y)
         self.animation = anim
         self.cursor = animation.SimpleCursor()

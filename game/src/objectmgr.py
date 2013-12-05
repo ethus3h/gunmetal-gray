@@ -19,6 +19,9 @@ class ObjectManager:
 
         # Sprite groups for collision and drawing
         self.visible = pygame.sprite.Group()
+        self.visible_back = pygame.sprite.Group()
+        self.visible_front = pygame.sprite.Group()
+
         self.solid = pygame.sprite.Group()
         self.player_touchable = pygame.sprite.Group()
         self.enemy_touchable = pygame.sprite.Group()
@@ -115,8 +118,13 @@ class ObjectManager:
 
     def draw(self, surface, camera_x, camera_y):
         # Updates sprites rects relative to camera
+        self.visible_back.update(camera_x, camera_y)
         self.visible.update(camera_x, camera_y)
+        self.visible_front.update(camera_x, camera_y)
+
+        self.visible_back.draw(surface)
         self.visible.draw(surface)
+        self.visible_front.draw(surface)
 
     def debug_draw(self, surface, camera_x, camera_y):
         for obj in self.objects.values():
