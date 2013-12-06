@@ -9,6 +9,7 @@ import components
 import assets
 import inputs
 import statemgr
+import statevars
 
 # Animation states are used to control what animations should be playing at different times
 ANIM_RUN = 0
@@ -24,6 +25,7 @@ STATE_ALIVE = 0
 STATE_HURT = 1
 STATE_DEAD = 2
 STATE_SPAWN = 3
+STATE_WAIT = 4
 
 LEFT = -1
 RIGHT = 1
@@ -118,6 +120,10 @@ class Player(GameObject):
                 self.physics.jump(self.jump_speed)
                 self.jump_timer = self.max_jump_timer+td
 
+            if inputs.getInteractPress():
+                for obj in self.collider.iter_collide(self.obj_mgr.interactive):
+                    obj.call("interact", self)
+
         else:
             if inputs.getHorizontal() < 0.0 and self.physics.vx > -self.max_air_speed or inputs.getHorizontal() > 0.0 and self.physics.vx < self.max_air_speed:
                 self.physics.applyForce(inputs.getHorizontal() * self.air_accel * td, 0)
@@ -196,11 +202,17 @@ class Player(GameObject):
 
         self.sprite.updateAnim(td)
 
-    def spawn(self):
-        self.state = STATE_SPAWN
-        self.anim_state = ANIM_SPAWN
-        self.sprite.play("spawn")
-        assets.getSound("sounds/spawn.wav").play()
+    def spawn(self, spawn_type=None):
+        if spawn_type == "door":
+            self.state = STATE_SPAWN
+            self.anim_state = ANIM_SPAWN
+            self.sprite.play("door_exit")
+        else:
+            self.state = STATE_SPAWN
+            self.anim_state = ANIM_SPAWN
+            self.sprite.play("spawn")
+            assets.getSound("sounds/spawn.wav").play()
+        self.health.health = statevars.variables["health"]
 
     def doDamage(self, amount):
         if self.hurt_timer < 0:
@@ -212,6 +224,7 @@ class Player(GameObject):
             else:
                 self.sprite.play("hurt_r")
             self.health.change(amount)
+            statevars.variables["health"] = self.health.health
 
     def die(self):
         self.sound_die.play()
@@ -225,6 +238,11 @@ class Player(GameObject):
     def spriteCollide(self, gameobject, collider):
         pass
 
+    def enterDoor(self):
+        self.sprite.play("door_enter")
+        self.state = STATE_WAIT
+        self.anim_state = ANIM_SPAWN
+
     def zeroHealth(self):
         """ Called by Health component when health reaches 0 """
         print "Dead"
@@ -237,6 +255,7 @@ class Player(GameObject):
     def doHeal(self, amount):
         """Called when told to heal, like when collecting an enrgy pickup"""
         self.health.change(amount)
+        statevars.variables["health"] = self.health.health
 
     def debug_draw(self, surface, camera_x, camera_y):
         super(Player, self).debug_draw(surface, camera_x, camera_y)

@@ -1,7 +1,7 @@
 {
     "image":"graphics/player.png",
 	"columns":8,
-	"rows":4,
+	"rows":8,
     "sequences":[
         {
             "name":"run_r",
@@ -118,6 +118,26 @@
                 [27, 80],
                 [28, 80],
                 [31, 500]
+            ]
+        },
+        {
+            "name":"door_enter",
+            "looping":false,
+            "frames":[
+                [32, 200],
+                [33, 200],
+                [34, 200],
+                [35, 200]
+            ]
+        },
+        {
+            "name":"door_exit",
+            "looping":false,
+            "frames":[
+                [36, 200],
+                [37, 200],
+                [38, 200],
+                [39, 200]
             ]
         }
 	]

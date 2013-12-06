@@ -32,6 +32,12 @@ class PlayState(State):
         self.init = True
         statemgr.transition_switch("play", "Fade", "Fade")
 
+    def transitionMap(self, mapfile, spawnpoint):
+        statevars.variables["map_file"] = mapfile
+        statevars.variables["spawn"] = spawnpoint
+        self.init = True
+        statemgr.transition_switch("play", "Spotlight", "Spotlight")
+
     def start(self):
         """Initialization for the play state"""
         # The player's energy bar

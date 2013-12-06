@@ -9,7 +9,8 @@
         "down":"down",
         "jump":"z",
         "fire":"x",
-        "pause":"return"
+        "pause":"return",
+        "interact":"up"
     },
     "joystick":{
         "stick_id":0,
@@ -18,7 +19,8 @@
         "vertical":1,
         "jump":1,
         "fire":0,
-        "pause":9
+        "pause":9,
+        "interact":2
     },
     "xbox":{
         "stick_id":0,
@@ -27,6 +29,7 @@
         "vertical":1,
         "jump":0,
         "fire":2,
-        "pause":7
+        "pause":7,
+        "interact":3
     }
 }

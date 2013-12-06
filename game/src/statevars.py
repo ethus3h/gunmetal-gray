@@ -14,6 +14,7 @@ empty_file = {
     "map_file": "maps/start.tmx",  # The map that should be loaded on start
     "spawn": "start",             # The spawn point of the player
 
+    "health": 100,  # The amount of health the player has when saved
     "gold": 0,    # Gold the player has collected
     "ammo": 25,   # Ammunition they player has
 

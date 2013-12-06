@@ -14,3 +14,4 @@ from explosion import Explosion
 from spawner import Spawner
 from despawner import Despawner
 from image import Image, AnimImage
+from door import Door

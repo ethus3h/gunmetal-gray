@@ -25,6 +25,7 @@ class ObjectManager:
         self.solid = pygame.sprite.Group()
         self.player_touchable = pygame.sprite.Group()
         self.enemy_touchable = pygame.sprite.Group()
+        self.interactive = pygame.sprite.Group()
 
         self.auto_name_id = 0
 
