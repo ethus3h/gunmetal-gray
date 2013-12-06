@@ -373,7 +373,7 @@
   <object type="Energy" gid="226" x="201" y="225"/>
   <object type="Energy" gid="226" x="302" y="234"/>
   <object type="Energy" gid="226" x="848" y="800"/>
-  <object name="ship" type="Ship" gid="225" x="112" y="221"/>
+  <object name="start" type="Player" gid="225" x="112" y="221"/>
   <object name="emt_1" type="EMT" gid="255" x="246" y="239"/>
   <object name="emt_2" type="EMT" gid="255" x="624" y="832"/>
   <object type="Crawler" gid="244" x="679" y="147"/>
