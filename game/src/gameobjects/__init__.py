@@ -15,3 +15,4 @@ from spawner import Spawner
 from despawner import Despawner
 from image import Image, AnimImage
 from door import Door
+from cave import Cave

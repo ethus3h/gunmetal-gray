@@ -32,5 +32,18 @@
     <property name="spawnpoint" value="door_1"/>
    </properties>
   </object>
+  <object name="cave_1" type="Cave" x="1088" y="320" width="128" height="128">
+   <properties>
+    <property name="mapfile" value="maps/start.tmx"/>
+    <property name="spawnpoint" value="cave_2"/>
+   </properties>
+  </object>
+  <object name="cave_2" type="Cave" x="416" y="288" width="128" height="128">
+   <properties>
+    <property name="cavetype" value="exit"/>
+    <property name="mapfile" value="maps/start.tmx"/>
+    <property name="spawnpoint" value="cave_1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
