@@ -8,15 +8,15 @@ from gameobject import GameObject
 import random
 
 class Spawner(GameObject):
-    def __init__(self, scene, name, x, y, width=0, height=0, obj="", rate=500, count=1, params={}, **kwargs):
+    def __init__(self, scene, name, x, y, width=0, height=0, spawner_obj="", spawner_rate=500, spawner_count=1, **kwargs):
         super(Spawner, self).__init__(scene, name, x, y)
         self.width = width
         self.height = height
-        self.obj_name = obj
-        self.rate = int(rate)
+        self.obj_name = spawner_obj
+        self.rate = int(spawner_rate)
         self.timer = self.rate
-        self.count = count
-        self.params = params
+        self.count = int(spawner_count)
+        self.kwargs = kwargs
 
     def init(self):
         self.obj_mgr.normal_update.append(self)
@@ -37,7 +37,7 @@ class Spawner(GameObject):
                         self.timer = self.rate
                         x = self.x + random.randrange(self.width)
                         y = self.y + random.randrange(self.height)
-                        self.obj_mgr.create(self.obj_name, None, x, y, **self.params)
+                        self.obj_mgr.create(self.obj_name, None, x, y, **self.kwargs)
 
     def debug_draw(self, surface, camera_x, camera_y):
         super(Spawner, self).debug_draw(surface, camera_x, camera_y)

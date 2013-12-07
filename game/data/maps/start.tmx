@@ -45,5 +45,12 @@
     <property name="spawnpoint" value="cave_1"/>
    </properties>
   </object>
+  <object type="Spawner" x="692" y="27" width="240" height="153">
+   <properties>
+    <property name="spawner_count" value="-1"/>
+    <property name="spawner_obj" value="Explosion"/>
+    <property name="spawner_rate" value="200"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
