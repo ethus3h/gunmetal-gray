@@ -30,7 +30,7 @@ class Door(GameObject):
 
     def spawnPlayer(self):
         """Create a player object"""
-        player = self.obj_mgr.create("Player", "player", self.x+96, self.y+64)
+        player = self.obj_mgr.create("Player", "player", self.x+96, self.y+65)
         player.spawn("door")
         self.sprite.play("closing")
 
@@ -38,9 +38,8 @@ class Door(GameObject):
         pass
 
     def interact(self, obj):
-        obj.call("enterDoor")
+        obj.call("enterDoor", self.mapfile, self.spawnpoint)
         self.sprite.play("opening")
-        statemgr.get("play").transitionMap(self.mapfile, self.spawnpoint)
 
     def debug_draw(self, surface, camera_x, camera_y):
         super(Door, self).debug_draw(surface, camera_x, camera_y)

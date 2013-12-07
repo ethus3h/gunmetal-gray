@@ -17,4 +17,4 @@ from image import Image, AnimImage
 from door import Door
 from cave import Cave
 from sign import Sign
-
+from sidetravel import SideTravel

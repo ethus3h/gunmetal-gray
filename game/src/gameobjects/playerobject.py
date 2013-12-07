@@ -19,6 +19,7 @@ ANIM_HURT = 3
 ANIM_DIE = 4
 ANIM_SHOOT = 5
 ANIM_SPAWN = 6
+ANIM_WAIT = 7
 
 # The player's state to modify the object's behaviors
 STATE_ALIVE = 0
@@ -26,6 +27,7 @@ STATE_HURT = 1
 STATE_DEAD = 2
 STATE_SPAWN = 3
 STATE_WAIT = 4
+STATE_TRAVEL = 5
 
 LEFT = -1
 RIGHT = 1
@@ -55,6 +57,7 @@ class Player(GameObject):
         self.jump_thrust = -0.002*1.4
         self.hurt_timer = 0
         self.max_hurt_timer = 300
+        self.travel_time = 0
         self.scene.setPlayer(self)
 
     def init(self):
@@ -74,7 +77,15 @@ class Player(GameObject):
             if not self.sprite.cursor.playing:
                 self.state = STATE_ALIVE
 
-        if self.state == STATE_DEAD:
+        elif self.state == STATE_TRAVEL:
+            self.travel_time -= td
+            if self.travel_time < 0:
+                self.state = STATE_ALIVE
+                self.anim_state = ANIM_STAND
+            else:
+                self.x += self.physics.vx * td
+
+        elif self.state == STATE_DEAD:
             # Kill the sprite after the beaming out animation is done playing, then respawn
             if not self.sprite.cursor.playing:
                 self.kill()
@@ -192,6 +203,8 @@ class Player(GameObject):
                 else:
                     pass
 
+            elif self.anim_state == ANIM_WAIT:
+                pass
             else:
                 if self.anim_state != ANIM_JUMP:
                     self.anim_state = ANIM_JUMP
@@ -207,6 +220,18 @@ class Player(GameObject):
             self.state = STATE_SPAWN
             self.anim_state = ANIM_SPAWN
             self.sprite.play("door_exit")
+        elif spawn_type == "left":
+            self.state = STATE_TRAVEL
+            self.anim_state = ANIM_WAIT
+            self.sprite.play("run_r")
+            self.physics.vx = 0.2
+            self.travel_time = 550
+        elif spawn_type == "right":
+            self.state = STATE_TRAVEL
+            self.anim_state = ANIM_WAIT
+            self.sprite.play("run_l")
+            self.physics.vx = -0.2
+            self.travel_time = 550
         else:
             self.state = STATE_SPAWN
             self.anim_state = ANIM_SPAWN
@@ -238,10 +263,26 @@ class Player(GameObject):
     def spriteCollide(self, gameobject, collider):
         pass
 
-    def enterDoor(self):
+    def enterDoor(self, mapfile, spawnpoint):
         self.sprite.play("door_enter")
         self.state = STATE_WAIT
         self.anim_state = ANIM_SPAWN
+        statemgr.get("play").transitionMap(mapfile, spawnpoint)
+
+    def sideTravel(self, side, mapfile, spawnpoint):
+        if self.travel_time <= 0:
+            statemgr.get("play").transitionMap(mapfile, spawnpoint)
+            self.state = STATE_TRAVEL
+            self.anim_state = ANIM_WAIT
+            self.travel_time = 1000
+            if side == "left":
+                self.physics.vx = -0.2
+                self.physics.vy = 0
+                #self.sprite.play("run_l")
+            else:
+                self.physics.vx = 0.2
+                self.physics.vy = 0
+                #self.sprite.play("run_r")
 
     def zeroHealth(self):
         """ Called by Health component when health reaches 0 """

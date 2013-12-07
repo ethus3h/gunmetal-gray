@@ -19,26 +19,23 @@ class Cave(GameObject):
 
     def init(self):
         """Initiation code."""
-        self.obj_mgr.normal_update.append(self)
         self.collider.addToGroup(self.obj_mgr.interactive)
 
     def destroy(self):
         """Clean up code."""
         self.sprite.destroy()
-        self.obj_mgr.normal_update.remove(self)
         self.collider.removeFromGroup(self.obj_mgr.interactive)
 
     def spawnPlayer(self):
         """Create a player object"""
-        player = self.obj_mgr.create("Player", "player", self.x+96, self.y+64)
+        player = self.obj_mgr.create("Player", "player", self.x+64, self.y+65)
         player.spawn("door")
 
     def spriteCollide(self, gameobject, collider):
         pass
 
     def interact(self, obj):
-        obj.call("enterDoor")
-        statemgr.get("play").transitionMap(self.mapfile, self.spawnpoint)
+        obj.call("enterDoor", self.mapfile, self.spawnpoint)
 
     def debug_draw(self, surface, camera_x, camera_y):
         super(Cave, self).debug_draw(surface, camera_x, camera_y)
