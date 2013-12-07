@@ -81,7 +81,8 @@ class Player(GameObject):
             self.travel_time -= td
             if self.travel_time < 0:
                 self.state = STATE_ALIVE
-                self.anim_state = ANIM_STAND
+                self.anim_state = ANIM_RUN
+                self.solidcollider.on_ground = True
             else:
                 self.x += self.physics.vx * td
 
@@ -226,12 +227,14 @@ class Player(GameObject):
             self.sprite.play("run_r")
             self.physics.vx = 0.2
             self.travel_time = 550
+            self.facing = RIGHT
         elif spawn_type == "right":
             self.state = STATE_TRAVEL
             self.anim_state = ANIM_WAIT
             self.sprite.play("run_l")
             self.physics.vx = -0.2
             self.travel_time = 550
+            self.facing = LEFT
         else:
             self.state = STATE_SPAWN
             self.anim_state = ANIM_SPAWN
