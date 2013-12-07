@@ -36,9 +36,9 @@ class StaticSprite(pygame.sprite.Sprite):
 
     def setVisibility(self, visible):
         if visible and not self.visible:
-            self.layers[layer].add(self)
+            self.layers[self.layer].add(self)
         if not visible and self.visible:
-            self.layers[layer].remove(self)
+            self.layers[self.layer].remove(self)
         self.visible = visible
 
     def debug_draw(self, surface, camera_x, camera_y):
