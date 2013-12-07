@@ -25,7 +25,7 @@ TEXT_PIC_WIDTH = DIALOG_WIDTH - MARGIN * 3 - PIC_WIDTH
 TEXT_WIDTH = DIALOG_WIDTH - MARGIN * 2
 TEXT_HEIGHT = DIALOG_HEIGHT - MARGIN * 2
 NEXT_BTN_X = DIALOG_WIDTH - 5
-NEXT_BTN_Y = DIALOG_HEIGHT - MARGIN
+NEXT_BTN_Y = DIALOG_HEIGHT - MARGIN - 6
 
 class Dialog:
     def __init__(self, filename):
@@ -61,11 +61,11 @@ class Dialog:
                 tx = MARGIN
 
             self.ui.add(ui.Image(px, PIC_TOP_POS, picture))
-            self.textbox = ui.ScrollText(tx, MARGIN, TEXT_PIC_WIDTH, TEXT_HEIGHT, text, 0.15)
+            self.textbox = ui.ScrollText(tx, MARGIN, TEXT_PIC_WIDTH, TEXT_HEIGHT, text, 0.25)
             self.ui.add(self.textbox)
 
         else:
-            self.textbox = ui.ScrollText(MARGIN, MARGIN, TEXT_WIDTH, TEXT_HEIGHT, text, 0.15)
+            self.textbox = ui.ScrollText(MARGIN, MARGIN, TEXT_WIDTH, TEXT_HEIGHT, text, 0.25)
             self.ui.add(self.textbox)
 
         self.ui.add(ui.Button(NEXT_BTN_X, NEXT_BTN_Y, "", self.next))

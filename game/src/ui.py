@@ -47,7 +47,7 @@ class Image(Widget):
 
 class Text(Widget):
     """Simple line of text"""
-    def __init__(self, x, y, text, font=None, color=(255,255,255)):
+    def __init__(self, x, y, text, font=None, color=(0,0,0)):
         super(Text, self).__init__(x, y)
         self.interactive = False
         if font is None:
@@ -83,7 +83,7 @@ class ScrollText(Widget):
         self.setText(text)
 
     def setText(self, text):
-        color = COLORS["white"]
+        color = COLORS["black"]
         line_images = []
         x = 0
         y = 0
@@ -155,7 +155,7 @@ class ScrollText(Widget):
 
 
 class Button(Text):
-    def __init__(self, x, y, text, command, font=None, color=(255,255,255)):
+    def __init__(self, x, y, text, command, font=None, color=(0,0,0)):
         super(Button, self).__init__(x, y, text, font=font, color=color)
         self.command = command
         self.interactive = True
@@ -213,4 +213,4 @@ class UI:
                 widget.draw(surface, self.x, self.y)
 
             selected = self.widgets[self.selected]
-            surface.blit(self.pointer, (self.x + selected.x - 10, self.y + selected.y + 1))
+            surface.blit(self.pointer, (self.x + selected.x - 10, self.y + selected.y + 7))

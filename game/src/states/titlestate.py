@@ -15,7 +15,7 @@ class TitleState(State):
     def __init__(self):
         super(TitleState, self).__init__()
         self.image = assets.getImage("graphics/title.png")
-        self.ui = ui.UI(220, 170)
+        self.ui = ui.UI(440, 400)
         self.ui.add(ui.Button(0, 0, "Continue", self.btnContinue))
         self.ui.add(ui.Button(0, 20, "New Game", self.btnNewGame))
 
