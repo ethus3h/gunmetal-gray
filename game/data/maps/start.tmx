@@ -52,5 +52,10 @@
     <property name="spawner_rate" value="200"/>
    </properties>
   </object>
+  <object type="Sign" x="864" y="288" width="64" height="64">
+   <properties>
+    <property name="filename" value="dialogs/example.json"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

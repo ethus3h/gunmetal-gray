@@ -16,3 +16,5 @@ from despawner import Despawner
 from image import Image, AnimImage
 from door import Door
 from cave import Cave
+from sign import Sign
+
