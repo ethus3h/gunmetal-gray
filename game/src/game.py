@@ -20,6 +20,8 @@ class Game:
         self.width = metrics.SCREEN_WIDTH * self.scale
         self.height = metrics.SCREEN_HEIGHT * self.scale
 
+        assets.setVolume(float(self.config["volume"]) / 100.0)
+
         fullscreen = 0
         if self.config["fullscreen"]:
             fullscreen = pygame.FULLSCREEN

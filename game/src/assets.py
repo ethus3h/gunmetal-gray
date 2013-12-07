@@ -26,6 +26,8 @@ _data = {}
 _data_py = os.path.dirname(__file__)
 _data_dir = os.path.normpath(os.path.join(_data_py, "../", "data"))
 
+_volume = 1.0
+
 def path(filename):
     # Returns a path to a file in the data directory
     return os.path.join(_data_dir, filename)
@@ -33,6 +35,10 @@ def path(filename):
 def load(filename, mode="rt"):
     # Opens a file in the data directory
     return open(os.path.join(_data_dir, filename), mode)
+
+def setVolume(volume):
+    global _volume
+    _volume = volume
 
 def getImageList(filename, columns, rows, keep=True):
     """Splits an image by rows and columns and puts those sub-images into a list to be returned."""
@@ -97,6 +103,9 @@ def getSound(filename, keep=True):
 
     if keep:
         _sounds[filename] = tmp
+
+    tmp.set_volume(_volume)
+
     return tmp
 
 def getFont(filename, size, keep=True):
