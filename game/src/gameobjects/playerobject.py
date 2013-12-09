@@ -37,7 +37,7 @@ class Player(GameObject):
         super(Player, self).__init__(scene, name, x, y, **kwargs)
         self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -66, -55)
         self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -16, -20, 28, 82)
-        self.collider = components.SpriteCollide(self, -16, -30, 28, 92)
+        self.collider = components.SpriteCollide(self, -16, -20, 28, 82)
         self.physics = components.Physics(self, self.solidcollider, 0.03)
         self.health = components.Health(self)
 
