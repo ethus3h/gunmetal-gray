@@ -35,8 +35,8 @@ RIGHT = 1
 class Player(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
         super(Player, self).__init__(scene, name, x, y, **kwargs)
-        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -48, -65)
-        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -16, -30, 28, 92)
+        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/player.json"), "stand_r", -66, -55)
+        self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -16, -20, 28, 82)
         self.collider = components.SpriteCollide(self, -16, -30, 28, 92)
         self.physics = components.Physics(self, self.solidcollider, 0.03)
         self.health = components.Health(self)
@@ -89,7 +89,8 @@ class Player(GameObject):
         elif self.state == STATE_DEAD:
             # Kill the sprite after the beaming out animation is done playing, then respawn
             if not self.sprite.cursor.playing:
-                self.kill()
+                #self.kill()
+                self.state = STATE_WAIT
                 statemgr.get("play").respawn()
         else:
             if self.state == STATE_ALIVE:
