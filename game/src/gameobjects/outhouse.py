@@ -4,6 +4,7 @@ from gameobject import GameObject
 from components import AnimSprite, SpriteCollide
 import statevars
 import assets
+import statemgr
 
 class Outhouse(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
@@ -49,6 +50,7 @@ class Outhouse(GameObject):
             if not self.sprite.cursor.playing:
                 self.state = 3
                 self.sprite.play("opening")
+                statemgr.switch("dialog", filename="dialogs/save.json")
         elif self.state == 3:
             if not self.sprite.cursor.playing:
                 self.state = 4
