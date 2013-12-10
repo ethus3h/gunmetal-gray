@@ -11,9 +11,9 @@ import assets
 class Explosion(GameObject):
     def __init__(self, scene, name, x, y, **kwargs):
         super(Explosion, self).__init__(scene, name, x, y, **kwargs)
-        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/explosion.json"), "explode", -16, -16)
+        self.sprite = components.AnimSprite(self, assets.getSpriteAnim("anims/explosion.json"), "explode", -128, -128)
         try:
-            assets.getSound("sounds/explosion.wav").play()
+            assets.getSound("sounds/big_explosion.wav").play()
         except:
             'Could not get sound'
 
