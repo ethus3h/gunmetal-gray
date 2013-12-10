@@ -137,10 +137,10 @@ class Player(GameObject):
         if inputs.getFirePress():
             self.anim_state = ANIM_SHOOT
             if self.facing == LEFT:
-                self.obj_mgr.create("PlayerLaser", None, self.x - 10, self.y + 4, direction=self.facing)
+                self.obj_mgr.create("PlayerLaser", None, self.x - 47, self.y + 6, direction=self.facing)
                 self.sprite.play("shoot_l")
             else:
-                self.obj_mgr.create("PlayerLaser", None, self.x + 10, self.y + 4, direction=self.facing)
+                self.obj_mgr.create("PlayerLaser", None, self.x + 47, self.y + 6, direction=self.facing)
                 self.sprite.play("shoot_r")
 
         if self.solidcollider.on_ground:
