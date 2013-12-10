@@ -71,5 +71,6 @@
     <property name="spawnpoint" value="side_1"/>
    </properties>
   </object>
+  <object type="ChickBot" x="736" y="352" width="128" height="96"/>
  </objectgroup>
 </map>

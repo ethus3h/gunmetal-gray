@@ -29,8 +29,8 @@ class Game:
         # Changing some of the mixer settings reduces the delay before playing sound effects
         pygame.mixer.pre_init(44100, -16, 2, 2048)
         pygame.init()
-        pygame.display.set_caption("Cat Astro Fee")  # TODO: Come up with better name
-        pygame.display.set_icon(pygame.image.load(assets.path("graphics/icon.png")))
+        pygame.display.set_caption("Gunmetal Gray")  # TODO: Come up with better name
+        #pygame.display.set_icon(pygame.image.load(assets.path("graphics/icon.png")))
         pygame.mouse.set_visible(False)
         self.display = pygame.display.set_mode((self.width, self.height), pygame.HWSURFACE | pygame.DOUBLEBUF | fullscreen)
         self.surface = pygame.Surface((metrics.SCREEN_WIDTH, metrics.SCREEN_HEIGHT), pygame.HWSURFACE)
