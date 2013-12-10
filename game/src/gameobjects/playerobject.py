@@ -28,6 +28,8 @@ STATE_DEAD = 2
 STATE_SPAWN = 3
 STATE_WAIT = 4
 STATE_TRAVEL = 5
+STATE_OUTHOUSE_IN =6
+STATE_OUTHOUSE_OUT = 7
 
 LEFT = -1
 RIGHT = 1
@@ -76,6 +78,17 @@ class Player(GameObject):
             # Stay inactive until the beaming in animation is done
             if not self.sprite.cursor.playing:
                 self.state = STATE_ALIVE
+
+        elif self.state == STATE_OUTHOUSE_IN:
+            if not self.sprite.cursor.playing:
+                self.sprite.play("door_exit")
+                self.state = STATE_OUTHOUSE_OUT
+
+        elif self.state == STATE_OUTHOUSE_OUT:
+            if not self.sprite.cursor.playing:
+                self.sprite.play("stand_r")
+                self.state = STATE_ALIVE
+                self.anim_state = ANIM_STAND
 
         elif self.state == STATE_TRAVEL:
             self.travel_time -= td
@@ -136,7 +149,8 @@ class Player(GameObject):
 
             if inputs.getInteractPress():
                 for obj in self.collider.iter_collide(self.obj_mgr.interactive):
-                    obj.call("interact", self)
+                    if obj.call("interact", self) == True:
+                        break
 
         else:
             if inputs.getHorizontal() < 0.0 and self.physics.vx > -self.max_air_speed or inputs.getHorizontal() > 0.0 and self.physics.vx < self.max_air_speed:
@@ -273,6 +287,11 @@ class Player(GameObject):
         self.state = STATE_WAIT
         self.anim_state = ANIM_SPAWN
         statemgr.get("play").transitionMap(mapfile, spawnpoint)
+
+    def enterOuthouse(self):
+        self.sprite.play("door_enter")
+        self.anim_state = ANIM_WAIT
+        self.state = STATE_OUTHOUSE_IN
 
     def sideTravel(self, side, mapfile, spawnpoint):
         if self.travel_time <= 0:

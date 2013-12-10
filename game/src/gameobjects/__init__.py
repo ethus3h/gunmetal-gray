@@ -19,3 +19,4 @@ from cave import Cave
 from sign import Sign
 from sidetravel import SideTravel
 from chickbot import ChickBot
+from outhouse import Outhouse

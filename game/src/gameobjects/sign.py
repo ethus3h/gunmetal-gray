@@ -26,6 +26,7 @@ class Sign(GameObject):
 
     def interact(self, obj):
         statemgr.switch("dialog", self.filename)
+        return True
 
     def debug_draw(self, surface, camera_x, camera_y):
         super(Sign, self).debug_draw(surface, camera_x, camera_y)
