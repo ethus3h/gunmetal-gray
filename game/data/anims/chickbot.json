@@ -56,9 +56,9 @@
         },
         {
             "name":"hurt_l",
-            "looping":true,
+            "looping":false,
             "frames":[
-                [33, 100]
+                [33, 150]
             ]
         },
         {
@@ -70,9 +70,9 @@
         },
         {
             "name":"hurt_r",
-            "looping":true,
+            "looping":false,
             "frames":[
-                [35, 100]
+                [35, 150]
             ]
         }
     ]
