@@ -21,9 +21,10 @@ def set_level_default(filename):
 
 def play(filename):
     global current_music, previous_music, is_playing
-
-    pygame.mixer.music.set_volume(assets._volume)
-
+    try:
+        pygame.mixer.music.set_volume(assets._volume)
+    except:
+        print 'No mixer found'
     if filename != current_music:
         previous_music = current_music
         current_music = filename

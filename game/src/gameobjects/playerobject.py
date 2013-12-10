@@ -117,7 +117,10 @@ class Player(GameObject):
 
             if self.state == STATE_ALIVE:
                 if not was_on_ground and self.solidcollider.on_ground:
-                    self.sound_land.play()
+                    try:   
+                        self.sound_land.play()
+                    except:
+                        print 'error playing sound'
 
                 for tile, tile_pos, pixel_pos in self.solidcollider.mapcollider.iterTiles():
                     self.processTile(td, tile, tile_pos, pixel_pos)
@@ -260,7 +263,10 @@ class Player(GameObject):
 
     def doDamage(self, amount):
         if self.hurt_timer < 0:
-            self.sound_hurt.play()
+            try:
+                self.sound_hurt.play()
+            except:
+                print 'error loading sound'
             self.hurt_timer = self.max_hurt_timer
             self.anim_state = ANIM_HURT
             if self.facing == LEFT:
@@ -271,7 +277,10 @@ class Player(GameObject):
             statevars.variables["health"] = self.health.health
 
     def die(self):
-        self.sound_die.play()
+        try:
+            self.sound_die.play()
+        except:
+            print 'error loading sound'
         self.state = STATE_DEAD
         self.anim_state = ANIM_DIE
         if self.facing == LEFT:

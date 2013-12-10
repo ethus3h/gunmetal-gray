@@ -99,13 +99,17 @@ def getSound(filename, keep=True):
     try:
         tmp = pygame.mixer.Sound(path(filename))
     except:
-        tmp = pygame.mixer.Sound(path("defaults/sound.wav"))
+        try:
+            tmp = pygame.mixer.Sound(path("defaults/sound.wav"))
+        except:
+            print 'No mixer found'
 
     if keep:
         _sounds[filename] = tmp
-
-    tmp.set_volume(_volume)
-
+    try:
+        tmp.set_volume(_volume)
+    except:
+        print 'No mixer found'
     return tmp
 
 def getFont(filename, size, keep=True):
