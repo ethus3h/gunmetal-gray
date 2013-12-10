@@ -88,6 +88,7 @@ class Player(GameObject):
 
         elif self.state == STATE_DEAD:
             # Kill the sprite after the beaming out animation is done playing, then respawn
+            self.physics.update(td)
             if not self.sprite.cursor.playing:
                 #self.kill()
                 self.state = STATE_WAIT
