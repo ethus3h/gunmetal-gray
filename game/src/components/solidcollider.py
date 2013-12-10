@@ -18,7 +18,7 @@ class SolidCollider:
         self.width = width
         self.height = height
 
-        self.on_ground = False
+        self.on_ground = True
         self.hit_left = False
         self.hit_right = False
         self.hit_top = False

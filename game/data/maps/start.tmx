@@ -26,7 +26,7 @@
     <property name="sequence" value="jet"/>
    </properties>
   </object>
-  <object name="start" type="Door" x="160" y="256" width="128" height="128">
+  <object name="door_1" type="Door" x="160" y="256" width="128" height="128">
    <properties>
     <property name="mapfile" value="maps/start_eliot.tmx"/>
     <property name="spawnpoint" value="door_1"/>
@@ -73,5 +73,6 @@
   </object>
   <object type="ChickBot" x="736" y="352" width="128" height="96"/>
   <object name="outhouse_1" type="Outhouse" x="1120" y="32" width="128" height="160"/>
+  <object name="start" type="StartSpawn" x="1280" y="416" width="32" height="32"/>
  </objectgroup>
 </map>

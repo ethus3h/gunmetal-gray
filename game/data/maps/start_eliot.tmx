@@ -34,7 +34,7 @@
   <object name="door_1" type="Door" x="576" y="352" width="128" height="128">
    <properties>
     <property name="mapfile" value="maps/start.tmx"/>
-    <property name="spawnpoint" value="start"/>
+    <property name="spawnpoint" value="door_1"/>
    </properties>
   </object>
  </objectgroup>

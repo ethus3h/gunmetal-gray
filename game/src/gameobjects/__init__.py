@@ -20,3 +20,4 @@ from sign import Sign
 from sidetravel import SideTravel
 from chickbot import ChickBot
 from outhouse import Outhouse
+from startspawn import StartSpawn
