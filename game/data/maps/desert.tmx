@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="300" height="100" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="camera_x" value="112"/>
+  <property name="camera_y" value="176"/>
+  <property name="music" value="music/test_music_1.mp3"/>
+ </properties>
+ <tileset firstgid="1" source="tileset.tsx"/>
+ <layer name="Background" width="300" height="100">
+  <properties>
+   <property name="parallax" value="0.7"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6D6mH+fV3AHkLBqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq+D3ojXMU=
+  </data>
+ </layer>
+ <layer name="Foreground" width="300" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3A2O20QcxmEvn1KRkFo2tAUBEkeAE8AN2sPuTTgCnANHYK3rdRI7cfx6PM9PeqRuum1mZzV/Od6Pp6Zpnnr+aiRpmz015pWkMjKvJJWSeSWplMwrSaVkXkkqJfNKUimZV5JKybySVErmlaRSMq8klZJ5JamUzCtJpWReSSqlmufVT61f0ouQNLma59WpzDFpm5lXkkqplnn1zUPTfPsw/ne/nnhc0raqZV792M6kn0/MpY8T55XXiVI286ppfmsf/901lrT5zKvp11fncu0l3b89zqtXDy/vV52aV3+0j/3p2koqouG8+rv1T3RFt/W+nT0/PLycT/23h/fXx14Pugcvba8vZvqq9fUNz/dZ6/M7Pe+r/2fVsXPzajifxl4Puqclba/HGQ6t71tvm+c58m7Gc71uvWl9t8DzDmfY+96sOnZqXg1f/516PbjEPS1JyzZnbowZzpBzjrPqsMBzdsZm2JjjTO3Pr24WfRi83e/UvOr+TXed+OVEt16XSlpudmzZ1Jl2rD/DPvTm2uvm5eydc53YzVZzS7q+9CzZiksz7c0Cz9F/XWtuSfNLz4ka9eeW14zS9NJnl2f9GWZ2SS9Ln1HOz645X3+V9l76XHKee13Sc+nzyGWutaT/Sp9FpnOtpdpLn0Hm8f0Qqrn0+eO2ueU1omoqfe64jZmlmkqfN8wsaWrps4aZJU0tfc4ws6Sppc8YZpY0tfT54j4zy/c7aI+lzxbL6//+B2lPpc8W951bj420n9JnivvPrEMj7aP0ecLMkqaWPkusSyq59PlhPa6z7tcSnx9dLn2GWJeZdV2pz5c+LX1+WJ+vG14u/Tmao6bSe02OufVc+nNxb3spvY9k7X1mpfd3q0otvW/kdfe0jn/eU+l93btrS6+b/Sm99P4B6yn164jpfQMyDiNvb7n0fgHbcWg+vdd1tJXSewNs3xZmV3oPgLKMXXs9Dh4bvs8SpT9uYN+mXJN173fuvv/w/wK4p1syq4C1XZt5Bazp2u+RSK8bqNfc0usF6nTNNVZ6zUC95pZeL8CUn1vs3i+9VqA+c3/Gx6wCUub+LgjzCkiaM6/SawWYWnqdAFNLrxPgXOm1AfRdKr0+gM7U0usEOJpSeo0AnUul1wfQuVR6fQCdS6XXB9C5VHp9AJ1LpdcH0BkrvSaAMadKrwtYzy1taY3pfQSWtVaJtaT3FlhOojXXkd5fYBk1lN5jYBk1lN5j4Ha1lN5nYBk1lN5jYBk1lN5jYBk1lN5jYBl7L72/wLL2WnpfgeXdq8R603sJrGPJ0h8LwFBXeh0AAAAAnX8B0/FuVQ==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="300" height="100">
+  <object type="ChickBot" x="1056" y="608" width="160" height="128"/>
+  <object type="ChickBot" x="2560" y="672" width="160" height="128"/>
+  <object type="ChickBot" x="3584" y="992" width="160" height="128"/>
+  <object type="ChickBot" x="4032" y="1408" width="160" height="128"/>
+  <object type="ChickBot" x="4768" y="1728" width="160" height="128"/>
+  <object type="ChickBot" x="3872" y="2944" width="160" height="128"/>
+  <object type="ChickBot" x="4736" y="2880" width="160" height="128"/>
+  <object type="ChickBot" x="5184" y="2912" width="160" height="128"/>
+  <object name="start" type="StartSpawn" x="256" y="640" width="32" height="32"/>
+ </objectgroup>
+</map>

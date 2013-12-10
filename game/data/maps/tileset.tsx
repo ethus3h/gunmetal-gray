@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="tileset" tilewidth="32" tileheight="32">
- <image source="graphics/tileset.png" width="512" height="2048"/>
+ <image source="graphics/tileset.png" width="512" height="2062"/>
  <tile id="1">
   <properties>
    <property name="left_height" value="0"/>
@@ -349,6 +349,153 @@
  <tile id="133">
   <properties>
    <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="180">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="181">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="195">
+  <properties>
+   <property name="left_height" value="0"/>
+   <property name="right_height" value="16"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="196">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="211">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="212">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="228">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="229">
+  <properties>
+   <property name="left_height" value="16"/>
+   <property name="right_height" value="32"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="262">
+  <properties>
+   <property name="left_height" value="32"/>
+   <property name="right_height" value="0"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="265">
+  <properties>
+   <property name="left_height" value="0"/>
+   <property name="right_height" value="32"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="266">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="267">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="268">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="269">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="278">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="279">
+  <properties>
+   <property name="left_height" value="32"/>
+   <property name="right_height" value="0"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="280">
+  <properties>
+   <property name="left_height" value="0"/>
+   <property name="right_height" value="32"/>
+   <property name="type" value="slope"/>
+  </properties>
+ </tile>
+ <tile id="281">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="282">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="285">
+  <properties>
+   <property name="type" value="block"/>
+  </properties>
+ </tile>
+ <tile id="289">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="305">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="306">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="320">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="321">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="336">
+  <properties>
+   <property name="type" value="spike"/>
+  </properties>
+ </tile>
+ <tile id="337">
+  <properties>
+   <property name="type" value="spike"/>
   </properties>
  </tile>
 </tileset>
