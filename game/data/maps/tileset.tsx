@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset name="tileset" tilewidth="32" tileheight="32">
- <image source="graphics/tileset.png" width="512" height="512"/>
+ <image source="graphics/tileset.png" width="512" height="2048"/>
  <tile id="1">
   <properties>
    <property name="left_height" value="0"/>
