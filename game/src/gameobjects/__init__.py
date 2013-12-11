@@ -23,3 +23,4 @@ from outhouse import Outhouse
 from startspawn import StartSpawn
 from npc import NPC
 from steam import Steam
+from helibot import HeliBot

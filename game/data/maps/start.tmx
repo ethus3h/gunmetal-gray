@@ -72,5 +72,9 @@
     <property name="filename" value="dialogs/help.json"/>
    </properties>
   </object>
+  <object type="HeliBot" x="1760" y="256" width="128" height="128"/>
+  <object type="HeliBot" x="1760" y="128" width="128" height="128"/>
+  <object type="HeliBot" x="1632" y="256" width="128" height="128"/>
+  <object type="HeliBot" x="1632" y="128" width="128" height="128"/>
  </objectgroup>
 </map>

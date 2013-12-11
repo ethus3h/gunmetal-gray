@@ -43,6 +43,8 @@ class Physics:
                 self.vx -= self.vx * self.friction * td
                 self.jumping = False
             self.vy = -self.vy * self.bounciness
+            if self.vy < -0.0001:
+                self.jumping = True
 
         if not h_collide and not v_collide:
             self.vx -= self.vx * self.air_resistance * td
