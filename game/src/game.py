@@ -61,9 +61,9 @@ class Game:
                         timestamp = str(int(time.time()) - 1382496589)
                         pygame.image.save(self.surface, assets.path("screenshots/screenshot" + timestamp + ".png"))
 
-                    if event.key == pygame.K_ESCAPE:
+                    #if event.key == pygame.K_ESCAPE:
                         # Escape quits the game
-                        self.playing = False
+                    #    self.playing = False
 
                 if event.type == pygame.QUIT:
                     # X button

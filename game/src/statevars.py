@@ -55,5 +55,6 @@ def save(filename=None):
 def new_file(filename=None):
     global variables
 
-    variables = empty_file
+    variables = {}
+    variables.update(empty_file)
     save(filename)

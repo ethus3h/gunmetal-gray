@@ -39,7 +39,3 @@ class DialogState(State):
 
     def debug_draw(self, surface):
         self.old_state.debug_draw(surface)
-
-    def event(self, event):
-        """Should return true if game is still playing and false if the window should close"""
-        return True

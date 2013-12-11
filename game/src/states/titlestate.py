@@ -4,6 +4,7 @@
 The title state shows the title screen and let's the player select either a new game or continuing.
 """
 
+import pygame
 from states import State
 import statemgr
 import assets
@@ -22,12 +23,12 @@ class TitleState(State):
     def btnContinue(self):
         """Called when player selects Continue.  Loads the old save file then starts playing."""
         statevars.load("saves/save_1.json")
-        statemgr.transition_switch("play", "Blink", "Spotlight")
+        statemgr.transition_switch("play", "Fade", "Spotlight", respawn=True)
 
     def btnNewGame(self):
         """Called when the player selects New Game.  Clear state variables, save them, then starts playing."""
         statevars.new_file("saves/save_1.json")
-        statemgr.transition_switch("play", "Blink", "Spotlight")
+        statemgr.transition_switch("play", "Fade", "Spotlight", respawn=True)
 
     def gainFocus(self, previous, previous_name, *args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
@@ -50,4 +51,7 @@ class TitleState(State):
 
     def event(self, event):
         """Should return true if game is still playing and false if the window should close"""
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                return False
         return True

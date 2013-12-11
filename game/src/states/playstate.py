@@ -18,7 +18,7 @@ class PlayState(State):
     def __init__(self):
         super(PlayState, self).__init__()
         self.init = True
-        self.help_text="dialogs/help.json"
+        self.help_text="dialogs/intro.json"
         self.scene = None
 
     def setPlayer(self, player):
@@ -68,9 +68,9 @@ class PlayState(State):
             obj = self.scene.object_mgr.get(spawn)
             obj.call("spawnPlayer")
 
-    def gainFocus(self, previous, previous_name, *args, **kwargs):
+    def gainFocus(self, previous, previous_name, respawn=False,*args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
-        if self.init:
+        if self.init or respawn:
             self.init = False
             self.start()
         music.play_level_music()
@@ -95,10 +95,3 @@ class PlayState(State):
 
     def debug_draw(self, surface):
         self.scene.debug_draw(surface)
-
-    def event(self, event):
-        """Should return true if game is still playing and false if the window should close"""
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F1:
-                statemgr.switch("dialog", filename=self.help_text)
-        return True
