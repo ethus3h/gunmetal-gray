@@ -36,6 +36,7 @@ class AnimImage(GameObject):
     def destroy(self):
         """Clean up code."""
         self.sprite.destroy()
+        self.obj_mgr.normal_update.remove(self)
 
     def update(self, td):
         self.sprite.updateAnim(td)

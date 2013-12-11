@@ -15,12 +15,18 @@ class ChickBot(Enemy):
             self.sprite.play("walk_l")
         self.walk_speed = 0.003
         self.state = 0
+        self.steam_time = 0
 
     def enemyUpdate(self, td):
         self.updateState(td)
         self.updateAnim(td)
 
     def updateState(self, td):
+        self.steam_time -= td
+        if self.steam_time < 0:
+            self.steam_time = 500
+            self.obj_mgr.create("Steam", None, self.x + 32 + 48 * -self.facing, self.y)
+
         if self.state == 0:
             turn = False
 
