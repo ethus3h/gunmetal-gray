@@ -31,6 +31,6 @@
         "jump":0,
         "fire":2,
         "pause":7,
-        "interact":3
+        "interact":1
     }
 }

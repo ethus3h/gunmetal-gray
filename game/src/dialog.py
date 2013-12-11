@@ -61,11 +61,11 @@ class Dialog:
                 tx = MARGIN
 
             self.ui.add(ui.Image(px, PIC_TOP_POS, picture))
-            self.textbox = ui.ScrollText(tx, MARGIN, TEXT_PIC_WIDTH, TEXT_HEIGHT, text, 0.25)
+            self.textbox = ui.ScrollText(tx, MARGIN, TEXT_PIC_WIDTH, TEXT_HEIGHT, text, 0.35)
             self.ui.add(self.textbox)
 
         else:
-            self.textbox = ui.ScrollText(MARGIN, MARGIN, TEXT_WIDTH, TEXT_HEIGHT, text, 0.25)
+            self.textbox = ui.ScrollText(MARGIN, MARGIN, TEXT_WIDTH, TEXT_HEIGHT, text, 0.35)
             self.ui.add(self.textbox)
 
         self.ui.add(ui.Button(NEXT_BTN_X, NEXT_BTN_Y, "", self.next))
