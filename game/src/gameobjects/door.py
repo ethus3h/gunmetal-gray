@@ -6,13 +6,13 @@ import statemgr
 import assets
 
 class Door(GameObject):
-    def __init__(self, scene, name, x, y, mapfile="", spawnpoint="", **kwargs):
+    def __init__(self, scene, name, x, y, mapfile="", spawnpoint="", doortype="entrance", **kwargs):
         super(Door, self).__init__(scene, name, x, y, **kwargs)
         self.mapfile = mapfile
         self.spawnpoint = spawnpoint
 
-        self.sprite = AnimSprite(self, assets.getSpriteAnim("anims/door.json"), "closed", layer=0)
-        self.collider = SpriteCollide(self, 64+16, 32, 32, 96)
+        self.sprite = AnimSprite(self, assets.getSpriteAnim("anims/door_"+doortype+".json"), "closed", offset_y=8, layer=0)
+        self.collider = SpriteCollide(self, 64, 32, 32, 96)
 
     def init(self):
         """Initiation code."""
