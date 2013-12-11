@@ -5,7 +5,7 @@
 			"y": 10,
 			"delay": 0,
 			"background":"graphics/dialog.png",
-			"picture":"graphics/portrait_example.png",
+			"picture":"graphics/sheriff_portrait.png",
 			"side":"right",
 			"lines":["This is some example text."]
 		},
@@ -14,7 +14,7 @@
 			"y": 150,
 			"delay": 200,
 			"background":"graphics/dialog_sign.png",
-			"picture":"graphics/portrait_example.png",
+			"picture":"graphics/npc_portrait.png",
 			"side":"left",
 			"lines":[
 				"~black~This is some example text.  This is some example text.",
