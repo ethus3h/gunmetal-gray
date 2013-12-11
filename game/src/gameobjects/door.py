@@ -30,7 +30,7 @@ class Door(GameObject):
 
     def spawnPlayer(self):
         """Create a player object"""
-        player = self.obj_mgr.create("Player", "player", self.x+96, self.y+65)
+        player = self.obj_mgr.create("Player", "player", self.x+96-16, self.y+65)
         player.spawn("door")
         self.sprite.play("closing")
 
