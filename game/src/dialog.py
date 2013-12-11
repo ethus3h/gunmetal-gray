@@ -43,7 +43,7 @@ class Dialog:
 
         x = dialog.get("x", DEFAULT_X)
         y = dialog.get("y", DEFAULT_Y)
-        self.delay = dialog.get("delay", DEFAULT_DELAY)  # TODO: Allow for delay between dialog boxes
+        self.delay = dialog.get("delay", DEFAULT_DELAY)
         background = dialog.get("background", DEFAULT_BACKGROUND)
         picture = dialog.get("picture")
         side = dialog.get("side", "left")
