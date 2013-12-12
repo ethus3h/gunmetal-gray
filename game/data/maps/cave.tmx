@@ -16,22 +16,15 @@
  </layer>
  <layer name="Foreground" width="200" height="100">
   <data encoding="base64" compression="zlib">
-   eJztnd1yGzUYQDVQ2ht6AY0TboCBpsA10CfoDO/B7z0QuOcvj5TnQxpbE1nVJ33SSrvr3XNmzjhpozhe62RXtuM9GGMOJx8Q8cyDoQ9ESfpAlKUPRFn6QJSlD0RZ+kCUpQ9EWfpAlKUPRFn6wBZHsfTtig372NLtwke19PgePVl6uzl79bHm27gHt85W+yix9Ly6ZPfKnvoAaIU+AMrQB0AZ+gDIQx8AZegDoAx9AJShD4Ay9AFQ5t7QB4DEfaC2j6fWZ0v8sAAzc290jRwib6zvBT5JfBz+G03BJaLt42qi1+a8qSfm7Y7CS3raPs9Par5uKeI+pEam9jGlp3jfFPpR/00CE+j9vHStvdH2ER9rpT6eu6ErU3684GPrJ9ZPG7YN1LOVLjypPqRGpL+tjf899bnUlNScZNzHV/03yXDesb5rzo8x431jfLyZMrX2c65hn7qFNhw1feQaGWGpkc8HbI9R+5uwiQ+tL8y4feqN4udpuZ1Tt82lNBFS20dpPo/oxB9HOV0Tr6y3IzbGID4w45u4xH3qGnuI6dnHyNvqeviicexINL9TPzPztOF+d6xxGy3J1H3e3H3sGdf4S3Ocw84vTd82oD8j+4AyL81jM7cnNd3440zfGoyhdx/QBzfn3fx37dwGH786CfPQqw+ALTK1D4BLRLtub+0DYA/U9AGwN7R9AOwR+gB4G78+oQ8AGfoAkKEPABn6AJChD4Ajfk2eW5fTBwB9AOSgDwCZUh9xIwB7gj5gj0x93S59ANAHQA76AJDh8SsAGfoAOIfnzwF01LRBH7A3atqgD9gbNW3QB4zg/cTn8b9pxo2gpg36gBq+tn5jfW399nT5Ovg8Vjq/icaa9zDUPKdRu9+gD8gRt+B8U+GLCt08LJ1baUQj9AG1+C5qWmhpImxjShctrdR8LwCHtgvNnKrponR+vqWF9ROeB1m71tWi6aJmPoVzPLeP8F9LH5AjPH+hdM741Pk8pa8NL0vn83Tnh+uxv9D2oj0P7JqE+fC/91Pn9Oyp5v4Nz53o7N3FVoSxxOd87t1E7ndwDvczXAnfq7dr3j/Qx7z4Hvw5y3u04OdXzbF6CX8+t9FtXLpwJFz3Po/+L7UPiNcGPXvw8z9ev/a6T92xVdjH0nNwzW6ZeF6H8zi15o3Xtz3mvJ/jo58nq8EfW10pvu/eXSO9b2Pv9a9mvqfmd+nxm9bj9FrC8+UuPf/2YO51NE+tz/J3V5Klb1NpLVxaC5Tmeo81ayv0Mb/S+byvrTfmcjuZ6lz7BC3h2oM+5r3fc+e9vzbHTkrPWeVY+jaPcG7CtQd9zGPcSq6TqY3MgXZOr72FFKn7ZOn5syd9K6VGLqGTrREfW9HG8o5al0Ad/vUktLGc8XGWZl/iO2FfMg6pDTpZTy+5RvwxF/uS/sRtxPcRfaxP9iXzILVBE+tROubKdUIj7YR/N+7boIt1qX1O7GA43upF/HeA8bamjctR+3zJtTl2MuV1KlvGN+HfW8Rty+/M43YNP8Z1K71eSbuG963suZOwh/D9dpa+b3HefjSdhGOl93H53vqD9UfrT8Hlz9ZfMuNSY2vGt15vaZz096/sJ/Zn6jWypXVNar79Hnl3utT0EY/Rjm+9Xs04f1tpYh9q1vK17wOTm2/ecJ6G4x4UY+P5ep8Ze5cZl7vO0jjcr7n5r31sLJxv8VzTzLfcWD++dL2lrjTj7grXh9hi6zzNjb0z5T4eCmM141p6RqzRzaVfrb+Z8znnLv+w/mnyfYRjY3PjW/dbuess/byILf5l/dv6j/XfwP9Mea5JY0vjp8zzKT8vYqvx+lk711Lv+a0ZP2WeS48ZIG7JVJPMdURERERERETEev8HbMc6OA==
+   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
   </data>
  </layer>
  <objectgroup name="Objects" width="200" height="100">
-  <object name="left" type="SideTravel" x="0" y="1280" width="32" height="1056">
-   <properties>
-    <property name="mapfile" value="maps/start.tmx"/>
-    <property name="side" value="left"/>
-    <property name="spawnpoint" value="right"/>
-   </properties>
-  </object>
-  <object name="cave" type="Cave" x="256" y="672" width="128" height="128">
+  <object name="cave_exit" type="Cave" x="256" y="672" width="128" height="128">
    <properties>
     <property name="cavetype" value="exit"/>
-    <property name="mapfile" value=""/>
-    <property name="spawnpoint" value=""/>
+    <property name="mapfile" value="maps/end.tmx"/>
+    <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
   <object name="outhouse" type="Outhouse" x="3008" y="768" width="128" height="160"/>
@@ -69,6 +62,12 @@
   <object type="Sign" x="4608" y="800" width="64" height="64">
    <properties>
     <property name="filename" value="dialogs/sign_threat.json"/>
+   </properties>
+  </object>
+  <object name="cave" type="Cave" x="96" y="2208" width="128" height="128">
+   <properties>
+    <property name="mapfile" value="maps/volcano.tmx"/>
+    <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
  </objectgroup>

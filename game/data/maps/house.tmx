@@ -24,30 +24,23 @@
  </layer>
  <layer name="Foreground" width="100" height="50">
   <data encoding="base64" compression="zlib">
-   eJzt2dkKwjAUANHg+uyC+v9fagoWo0SxgmbpGRh8kEK9QwxNQwAAAAAAAAAAAOiLVXSdfOZcJW6i2yJ32iaL6DI8zjCd6/OsjxM9Rc+3a7XJMzYYZrSPHsL0OX/j2Ma6ubML/23wybq5/PQX18m4JoYWJTvkHLrMqUkta0KTe4vS89akrRY9N6l5r5hbkxb2irk0afH/qdcmvbVouUmvLdImLTzPt75vT3F8nq+xS9qh9X372y6lz8BKnQHWbNrmnbn3Abl3A6/OtXPfaUCSJEmSJEmSJEny314BEC/IaQ==
+   eJztmcsKwjAUBYNWXftA/f8vNUFCI1yiFU3OTWdg6KJdtBnSkDYEaM2lIrSHHlrQQwt6aEEPLeihBT20oIcW9NCCHlrQQwt6aEEPLeihBT20qPWYorviaDkV7qOHtrfvmk10G17HsNZjqdfoLTw70cYmN0hjdIqew28bvGvDvJk5hrYNPpk3978+sSZ5TqQWPTtYpi5raqIyJ2gyt+g93jTx1WLkJsprxdqaeFgr1tLE4/tp1CajtfDcZNQWZRMP+3nv6/YS835esUvZwfu6/W2X3t/Aen0DVLZsU9P6H2D9G7DOW9fTABERERERERERERERERF7+ACA9tGT
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="50">
   <object name="left" type="SideTravel" x="0" y="128" width="32" height="384">
    <properties>
-    <property name="mapfile" value="maps/desert_cactus.tmx"/>
+    <property name="mapfile" value="maps/original.tmx"/>
     <property name="side" value="left"/>
     <property name="spawnpoint" value="right"/>
-   </properties>
-  </object>
-  <object name="right" type="SideTravel" x="3168" y="128" width="32" height="384">
-   <properties>
-    <property name="mapfile" value="maps/house.tmx"/>
-    <property name="side" value="right"/>
-    <property name="spawnpoint" value="left"/>
    </properties>
   </object>
   <object name="outhouse" type="Outhouse" x="1248" y="832" width="128" height="160"/>
   <object name="door" type="Door" x="1552" y="864" width="128" height="128">
    <properties>
     <property name="doortype" value="entrance"/>
-    <property name="mapfile" value=""/>
-    <property name="spawnpoint" value=""/>
+    <property name="mapfile" value="maps/volcano.tmx"/>
+    <property name="spawnpoint" value="door"/>
    </properties>
   </object>
   <object type="HeliBot" x="1760" y="640" width="128" height="128"/>

@@ -41,16 +41,16 @@ class Enemy(GameObject):
 
     def update(self, td):
         # Only update enemy if it is near or on screen
-        cam = self.scene.camera
-        if cam.x + cam.offset_x < self.x < cam.x + cam.width - cam.offset_x:
-            if cam.y + cam.offset_y < self.y < cam.y + cam.height - cam.offset_y:
+        #cam = self.scene.camera
+        #if cam.x + cam.offset_x < self.x < cam.x + cam.width - cam.offset_x:
+        #    if cam.y + cam.offset_y < self.y < cam.y + cam.height - cam.offset_y:
                 #print "updating " + self.name
-                self.health.update()
-                self.physics.update(td)
-                self.enemyUpdate(td)
-                self.spritecollider.update()
-                self.spritecollider.collide(self.obj_mgr.enemy_touchable)
-                self.sprite.updateAnim(td)
+        self.health.update()
+        self.physics.update(td)
+        self.enemyUpdate(td)
+        self.spritecollider.update()
+        self.spritecollider.collide(self.obj_mgr.enemy_touchable)
+        self.sprite.updateAnim(td)
 
     def enemyUpdate(self, td):
         """Override with enemy's behaviors"""
