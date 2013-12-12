@@ -74,11 +74,11 @@ class Scene:
         cx = -self.camera.x
         cy = -self.camera.y
         # Draw tile map back layer
-        self.tilemap.draw(surface, cx, cy, 0, 1)
+        self.tilemap.draw(surface, cx, cy, 0)
         # Draw object manager
         self.object_mgr.draw(surface, cx, cy)
         # Draw tile map front layer
-        self.tilemap.draw(surface, cx, cy, 1, 2)
+        self.tilemap.draw(surface, cx, cy, 1)
 
     def debug_draw(self, surface):
         self.object_mgr.debug_draw(surface, int(-self.camera.x), int(-self.camera.y))

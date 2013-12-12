@@ -111,16 +111,25 @@ class TileMap:
         self.background = None
         self.foreground = None
 
+        self.background_id = 0
+        self.foreground_id = 0
+
         self.layers = []
-        for layer in tmx.layers:
+        for i, layer in enumerate(tmx.layers):
             if layer.type == "tiles":
                 tmp = TileLayer(self, layer)
                 self.layers.append(tmp)
                 if tmp.name == "Background":
                     self.background = tmp
+                    self.background_id = i
                 elif tmp.name == "Foreground":
                     self.foreground = tmp
+                    self.foreground_id = i
 
-    def draw(self, surface, x, y, start=0, end=999999999):
-        for layer in self.layers[start:end]:
-            layer.draw(surface, x, y)
+    def draw(self, surface, x, y, layer=0):
+        if layer == 0:
+            for layer in self.layers[0:self.background_id+1]:
+                layer.draw(surface, x, y)
+        else:
+            for layer in self.layers[self.foreground_id:]:
+                layer.draw(surface, x, y)
