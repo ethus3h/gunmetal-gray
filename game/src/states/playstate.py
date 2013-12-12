@@ -98,3 +98,10 @@ class PlayState(State):
 
     def debug_draw(self, surface):
         self.scene.debug_draw(surface)
+
+    def event(self, event):
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_F1:
+                statemgr.switch("dialog", filename=self.help_text)
+
+        return super(PlayState, self).event(event)

@@ -186,13 +186,13 @@ class UI:
         """Update the UI"""
         v = inputs.getVerticalPress()
 
-        if v > 0.01:
+        if v < -0.01:
             # Go to previous interactive widget
             self.selected = (self.selected - 1) % len(self.widgets)
             while not self.widgets[self.selected].interactive:
                 self.selected = (self.selected - 1) % len(self.widgets)
 
-        if v < -0.01:
+        if v > 0.01:
             # Go to next interactive widget
             self.selected = (self.selected + 1) % len(self.widgets)
             while not self.widgets[self.selected].interactive:

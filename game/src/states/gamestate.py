@@ -36,9 +36,6 @@ class State(object):
     def event(self, event):
         """Should return true if game is still playing and false if the window should close"""
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_F1:
-                statemgr.switch("dialog", filename=self.help_text)
-
             if event.key == pygame.K_ESCAPE:
                 statemgr.transition_switch("title", "Fade", "Fade")
 
