@@ -66,7 +66,10 @@ class PlayState(State):
         if spawn is not None:
             # Spawn the player at the specified spawn point
             obj = self.scene.object_mgr.get(spawn)
-            obj.call("spawnPlayer")
+            if obj is not None:
+                obj.call("spawnPlayer")
+            else:
+                print spawn, "is not a valid spawn point"
 
     def gainFocus(self, previous, previous_name, respawn=False,*args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
