@@ -107,7 +107,7 @@ def getSound(filename, keep=True):
     if keep:
         _sounds[filename] = tmp
     try:
-        tmp.set_volume(_volume)
+        tmp.set_volume(_volume * 0.2)
     except:
         print 'No mixer found'
     return tmp
