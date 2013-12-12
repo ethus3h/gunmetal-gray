@@ -54,9 +54,9 @@
   <object type="HeliBot" x="2240" y="768" width="128" height="128"/>
   <object type="HeliBot" x="1664" y="704" width="128" height="128"/>
   <object type="HeliBot" x="800" y="576" width="128" height="128"/>
-  <object type="NPC" x="448" y="2240" width="64" height="96">
+  <object type="NPC" x="2592" y="2144" width="64" height="96">
    <properties>
-    <property name="filename" value="dialogs/npc_suspicious.json"/>
+    <property name="filename" value="dialogs/npc_contraptions.json"/>
    </properties>
   </object>
   <object type="Sign" x="4608" y="800" width="64" height="64">

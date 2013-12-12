@@ -34,7 +34,7 @@
   </object>
   <object type="Sign" x="2336" y="480" width="64" height="64">
    <properties>
-    <property name="filename" value="dialogs/sign_whiskey.json"/>
+    <property name="filename" value="dialogs/sign_directions.json"/>
    </properties>
   </object>
   <object type="ChickBot" x="2624" y="448" width="128" height="96"/>

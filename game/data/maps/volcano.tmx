@@ -47,5 +47,10 @@
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
+  <object type="NPC" x="256" y="480" width="64" height="96">
+   <properties>
+    <property name="filename" value="dialogs/npc_wine.json"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -19,38 +19,25 @@
    <property name="parallax" value="1"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzt2CcOgkEYBmHOCyegeaqmY+lYOpbOOYBTMEGRX5Nsws6TjFvxZuWXSkmSJEmSJEmSpF960JNeoYf8Of9ZkiRJkn4nTZnQI/SRpRzlqUDFsHOiVqIyVahKNaoHXRSvBjWpRW3qUJd61A+4K1YDGtKIxjShKc1oHnBXrBa0pBWtaUNb2tE+4K5YHehIJzrTha50o/vXu+R923u3JEmSJEmSJEmSJCnpDegUJ7g=
+   eJzt2E0KgCAURlFp0a25WkVOmhX49wzkHPjm4sWJKQEAAAAAACMdeWfe9fdBFueeAQAotW/vY76vFrrMV9JCk3lqemgSq7aFHrFaemgSo7WFHjF6emgyVm+Lp4f/7jG8CwAAAAAAAGAlN1CCRDI=
   </data>
  </layer>
  <layer name="Foreground" width="100" height="50">
   <data encoding="base64" compression="zlib">
-   eJztmcsKwjAUBYNWXftA/f8vNUFCI1yiFU3OTWdg6KJdtBnSkDYEaM2lIrSHHlrQQwt6aEEPLeihBT20oIcW9NCCHlrQQwt6aEEPLeihBT20qPWYorviaDkV7qOHtrfvmk10G17HsNZjqdfoLTw70cYmN0hjdIqew28bvGvDvJk5hrYNPpk3978+sSZ5TqQWPTtYpi5raqIyJ2gyt+g93jTx1WLkJsprxdqaeFgr1tLE4/tp1CajtfDcZNQWZRMP+3nv6/YS835esUvZwfu6/W2X3t/Aen0DVLZsU9P6H2D9G7DOW9fTABERERERERERERERERF7+ACA9tGT
+   eJzt1d0KgkAYhOGP0jovqY796/7vsI2U3KUCQ3dW9h14UCkPnEGszKwCAAAAACBBtdM7ndNOjv2X62Y4bwb3BJ5hy+pJr09LpBuwzbwN2n/Knhm2+b7B2I0qbPLeIpXkvklKW4zJeZNUk+smKSfHTVKPuh/28JPbO7KFqDtiDz/qjtjDj7oj9vCT0zdkK1H3xB5+1D2xhx91T+zhR91TLLelCls56p5iuToH57hMbatF3VNMF0t3l52zd06m70m1S2HabcYNSnvtcDZ9N2rTbX4pA0VwHv4vvOfTb2wAAAAAAAAAAAAAILYH4fxKjA==
   </data>
  </layer>
  <objectgroup name="Objects" width="100" height="50">
-  <object name="left" type="SideTravel" x="0" y="128" width="32" height="384">
+  <object name="cave" type="Cave" x="1552" y="864" width="128" height="128">
    <properties>
-    <property name="mapfile" value="maps/original.tmx"/>
-    <property name="side" value="left"/>
-    <property name="spawnpoint" value="right"/>
+    <property name="cavetype" value="entrance"/>
+    <property name="mapfile" value="maps/cave.tmx"/>
+    <property name="spawnpoint" value="cave_exit"/>
    </properties>
   </object>
-  <object name="outhouse" type="Outhouse" x="1312" y="832" width="128" height="160"/>
-  <object name="door" type="Door" x="1552" y="864" width="128" height="128">
+  <object type="NPC" x="1280" y="896" width="64" height="96">
    <properties>
-    <property name="doortype" value="entrance"/>
-    <property name="mapfile" value="maps/volcano.tmx"/>
-    <property name="spawnpoint" value="door"/>
-   </properties>
-  </object>
-  <object type="HeliBot" x="1760" y="640" width="128" height="128"/>
-  <object type="HeliBot" x="1952" y="768" width="128" height="128"/>
-  <object type="HeliBot" x="1024" y="672" width="128" height="128"/>
-  <object type="HeliBot" x="864" y="352" width="128" height="128"/>
-  <object type="HeliBot" x="384" y="320" width="128" height="128"/>
-  <object type="Sign" x="1216" y="928" width="64" height="64">
-   <properties>
-    <property name="filename" value="dialogs/sign_outhouse.json"/>
+    <property name="filename" value="dialogs/npc_end.json"/>
    </properties>
   </object>
  </objectgroup>
