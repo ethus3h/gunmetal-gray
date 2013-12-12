@@ -2,7 +2,7 @@
     "scale":1,
     "fullscreen":false,
     "volume":70,
-    "input":"keyboard",
+    "input":"xbox",
     "keyboard":{
         "left":"left",
         "right":"right",
