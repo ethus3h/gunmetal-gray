@@ -63,11 +63,14 @@ class ObjectManager:
         if name is None or name=="":
             name = self._auto_name()
 
-        if hasattr(gameobjects, class_name):
+        if class_name is not None and hasattr(gameobjects, class_name):
             obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
-            self.objects[name] = obj
-            obj.init()
-            return obj
+            if name not in self.objects:
+                self.objects[name] = obj
+                obj.init()
+                return obj
+            else:
+                print name, "name already in use."
         print class_name, "class not an object type."
         return None
 
