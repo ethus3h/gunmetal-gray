@@ -569,6 +569,7 @@ class TMXSerializer(object):
                 if not kwargs.get('value'):
                     y += height
                 kwargs['pixel_pos'] = x, y
+                subelem.attrib.pop('visible', 0) # Drop newer attribute
                 assert not subelem.attrib, (
                     'Unexpected object attributes: %s' % subelem.attrib)
                 properties = {}
