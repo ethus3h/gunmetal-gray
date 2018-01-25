@@ -22,11 +22,13 @@ class Cave(GameObject):
 
     def init(self):
         """Initiation code."""
+        self.obj_mgr.normal_update.append(self)
         self.collider.addToGroup(self.obj_mgr.interactive)
 
     def destroy(self):
         """Clean up code."""
         self.sprite.destroy()
+        self.obj_mgr.normal_update.remove(self)
         self.collider.removeFromGroup(self.obj_mgr.interactive)
 
     def spawnPlayer(self):
