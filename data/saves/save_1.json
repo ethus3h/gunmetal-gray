@@ -1,1 +1,1 @@
-{"spawn": "outhouse", "gold": 0, "maps": {"maps/2018jan25n3.tmx": {"events": []}}, "health": 100, "inventory": [], "events": [], "ammo": 25, "map_file": "maps/2018jan25n3.tmx"}
+{"spawn": "start", "gold": 0, "maps": {"maps/start.tmx": {"events": []}}, "health": 100, "inventory": [], "events": [], "ammo": 25, "map_file": "maps/start.tmx"}
