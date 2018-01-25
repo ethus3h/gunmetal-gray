@@ -2,7 +2,7 @@
 ----------------
 
 The :func:`~tmxlib.image.open` function provides a high-level interface to
-opening images, regardless
+reading images.
 
 """
 
@@ -10,20 +10,16 @@ from __future__ import division
 
 _builtin_open = open
 
-from tmxlib.image_base import Image, ImageRegion
 
 image_classes = []
 try:
     from tmxlib import image_pil
     image_classes.append(image_pil.PilImage)
-except ImportError:
+except ImportError:  # pragma: no cover
     pass
 
-try:
-    from tmxlib import image_png
-    image_classes.append(image_png.PngImage)
-except ImportError:
-    pass
+from tmxlib import image_png
+image_classes.append(image_png.PngImage)
 
 preferred_image_class = image_classes[0]
 
@@ -34,8 +30,14 @@ def open(filename, trans=None, size=None):
 
     :param filename: Name of the file to load the image from
     :param trans:
-        Optional color that should be rendered as transparent
-        (this is not implemented yet)
+        Optional color that should be loaded as transparent
+
+        .. note::
+
+            Currently, loading images that use color-key transparency
+            is very inefficient.
+            If possible, use the alpha channel instead.
+
     :param size:
         Optional (width, height) tuple.
         If specified, the file will not be read from disk when the image size

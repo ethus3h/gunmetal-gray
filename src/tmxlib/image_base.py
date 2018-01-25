@@ -5,77 +5,30 @@
 
 from __future__ import division
 
-import warnings
-
 from tmxlib import helpers, fileio
 
-
-def _clamp(value, minimum, maximum):
-    if value < minimum:
-        return minimum
-    elif value > maximum:
-        return maximum
-    else:
-        return value
-
-
 class ImageBase(helpers.SizeMixin):
-    """Image base class
+    """Provide __getitem__ and __setitem__ for images
 
-    This defines the basic image API, shared by
-    :class:`~tmxlib.image_base.Image` and
-    :class:`~tmxlib.image_base.ImageRegion`.
-
-    Pixels are represented as (r, g, b, a) float tuples, with components in the
-    range of 0 to 1.
+    Pixel access methods with (x, y) pairs for position and (r, g, b, a)
+    tuples for color.
     """
-    x, y = helpers.unpacked_properties('top_left')
-
     def __getitem__(self, pos):
-        """Get a pixel or region
+        """Get the pixel at the specified (x, y) position
 
-        With a pair of integers, this returns a pixel via
-        :meth:`~tmxlib.image_base.Image.get_pixel`:
-
-        :param pos: pair of integers, (x, y)
-        :return: pixel at (x, y) as a (r, g, b, a) float tuple
-
-        With a pair of slices, returns a sub-image:
-
-        :param pos: pair of slices, (left:right, top:bottom)
-        :return: a :class:`~tmxlib.image_base.ImageRegion`
+        Proxies to get_pixel.
         """
         x, y = pos
-        try:
-            left = x.start
-            right = x.stop
-            top = y.start
-            bottom = y.stop
-        except AttributeError:
-            return self.get_pixel(x, y)
-        else:
-            for c in x, y:
-                if c.step not in (None, 1):
-                    raise ValueError('step not supported for slicing images')
-            left, top = self._wrap_coords(
-                0 if left is None else left,
-                0 if top is None else top)
-            right, bottom = self._wrap_coords(
-                self.width if right is None else right,
-                self.height if bottom is None else bottom)
-            left = _clamp(left, 0, self.width)
-            right = _clamp(right, left, self.width)
-            top = _clamp(top, 0, self.height)
-            bottom = _clamp(bottom, top, self.height)
-            return ImageRegion(self, (left, top), (right - left, bottom - top))
+        return self.get_pixel(x, y)
 
-    def _parent_info(self):
-        """Return (x offset, y offset, immutable image)
+    def __setitem__(self, pos, value):
+        """Set the pixel at the specified (x, y) position
 
-        Used to make sure the parents of ImageRegion is always an Image,
-        not another region or a canvas.
+        Proxies to set_pixel.
         """
-        return 0, 0, self
+        x, y = pos
+        r, g, b, a = value
+        return self.set_pixel(x, y, value)
 
 
 class Image(ImageBase, fileio.ReadWriteBase):
@@ -106,29 +59,22 @@ class Image(ImageBase, fileio.ReadWriteBase):
 
         .. attribute:: trans
 
-            A color key used for transparency
+            A color key used for transparency (currently not implemented)
 
-            .. note::
+    Images support indexing (``img[x, y]``) as a shortcut for the get_pixel
+    and set_pixel methods.
 
-                Currently, loading images that use color-key transparency
-                is very inefficient.
-                If possible, use the alpha channel instead.
-
-    Images support indexing (``img[x, y]``); see
-    :meth:`tmxlib.image_base.ImageBase.__getitem__`
     """
     # XXX: Make `trans` actually work
-
+    # XXX: Make modifying and saving images work
     _rw_obj_type = 'image'
 
-    # Implement ImageRegion API
-    top_left = 0, 0
-
     def __init__(self, data=None, trans=None, size=None, source=None):
+        self.trans = trans
         self._data = data
         self.source = source
         self._size = size
-        self.trans = trans
+        self.serializer = fileio.serializer_getdefault()
 
     @property
     def size(self):
@@ -151,8 +97,8 @@ class Image(ImageBase, fileio.ReadWriteBase):
                 base_path = self.base_path
             except AttributeError:
                 base_path = None
-            serializer = fileio.serializer_getdefault(object=self)
-            self._data = serializer.load_file(self.source, base_path=base_path)
+            self._data = self.serializer.load_file(self.source,
+                    base_path=base_path)
             return self._data
 
     def load_image(self):
@@ -169,13 +115,20 @@ class Image(ImageBase, fileio.ReadWriteBase):
         """
         raise TypeError('Image data not available')
 
+    def set_pixel(self, x, y, value):
+        """Set the color of the pixel at position (x, y) to a RGBA 4-tuple
+
+        Supports negative indices by wrapping around in the obvious way.
+        """
+        raise TypeError('Image data not available')
+
 
 class ImageRegion(ImageBase):
     """A rectangular region of a larger image
 
     init arguments that become attributes:
 
-        .. attribute:: parent
+        .. attribute:: image
 
             The "parent" image
 
@@ -189,35 +142,26 @@ class ImageRegion(ImageBase):
             The size of the region.
             Will also available as ``width`` and ``height`` attributes.
     """
-    def __init__(self, parent, top_left, size):
-        self.top_left = top_left
+    def __init__(self, image, top_left, size):
+        self.image = image
+        self.top_left = x, y = top_left
         self.size = size
 
-        if self.x < 0 or self.y < 0:
-            raise ValueError('Image region coordinates may not be negative')
+    @property
+    def x(self):
+        return self.top_left[0]
 
-        if (self.x + self.width > parent.width or
-                self.y + self.height > parent.height):
-            raise ValueError('Image region extends outside parent image')
-
-        px, py, self.parent = parent._parent_info()
-        self.x += px
-        self.y += py
+    @x.setter
+    def x(self, value):
+        self.top_left = value, self.top_left[1]
 
     @property
-    def image(self):
-        warnings.warn("ImageRegion.image is deprecated; use parent instead",
-                      category=DeprecationWarning)
-        return self.parent
-    @image.setter
-    def image(self, value):
-        warnings.warn("ImageRegion.image is deprecated; use parent instead",
-                      category=DeprecationWarning)
-        self.parent = value
+    def y(self):
+        return self.top_left[1]
 
-    @property
-    def trans(self):
-        return self.parent.trans
+    @y.setter
+    def y(self, value):
+        self.top_left = self.top_left[0], value
 
     def get_pixel(self, x, y):
         """Get the color of the pixel at position (x, y) as a RGBA 4-tuple.
@@ -225,15 +169,16 @@ class ImageRegion(ImageBase):
         Supports negative indices by wrapping around in the obvious way.
         """
         x, y = self._wrap_coords(x, y)
-        if not (0 <= int(x) < self.width):
-            raise ValueError('x coordinate out of bounds')
-        if not (0 <= int(y) < self.height):
-            raise ValueError('y coordinate out of bounds')
-        return self.parent.get_pixel(x + self.x, y + self.y)
+        assert 0 <= x < self.width
+        assert 0 <= y < self.height
+        return self.image.get_pixel(x + self.x, y + self.y)
 
-    def _repr_png_(self):
-        crop_box = self.x, self.y, self.x + self.width, self.y + self.height
-        return self.parent._repr_png_(crop_box)
+    def set_pixel(self, x, y, value):
+        """Set the color of the pixel at position (x, y) to a RGBA 4-tuple
 
-    def _parent_info(self):
-        return self.x, self.y, self.parent
+        Supports negative indices by wrapping around in the obvious way.
+        """
+        x, y = self._wrap_coords(x, y)
+        assert 0 <= x < self.width
+        assert 0 <= y < self.height
+        self.image.set_pixel(x + self.x, y + self.y, value)

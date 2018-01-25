@@ -4,13 +4,13 @@
 from __future__ import division
 
 
-from tmxlib import helpers, tile
+from tmxlib import helpers, tile, draw
 
 
 NOT_GIVEN = object()
 
 
-class MapObject(helpers.PixelPosMixin, helpers.LayerElementMixin):
+class MapObject(helpers.LayerElementMixin):
     """A map object: something that's not placed on the fixed grid
 
     Has several subclasses.
@@ -72,6 +72,8 @@ class MapObject(helpers.PixelPosMixin, helpers.LayerElementMixin):
         .. attribute:: pixel_x
         .. attribute:: pixel_y
     """
+    pixel_x, pixel_y = helpers.unpacked_properties('pixel_pos')
+
     def __init__(self, layer, pixel_pos, name=None, type=None):
         self.layer = layer
         self.pixel_pos = pixel_pos
@@ -292,6 +294,17 @@ class RectangleObject(tile.TileLikeObject, SizedObject):
                 raise TypeError("Cannot modify size of tile objects")
         else:
             self._size = value
+
+    def generate_draw_commands(self):
+        if self.value:
+            yield draw.DrawImageCommand(
+                image=self.image,
+                pos=(self.pixel_x, self.pixel_y - self.pixel_height),
+                opacity=self.layer.opacity,
+            )
+        else:
+            # TODO: Rectangle objects
+            pass
 
     @helpers.from_dict_method
     def from_dict(cls, dct, layer):

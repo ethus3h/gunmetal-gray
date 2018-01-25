@@ -2,11 +2,12 @@
 
 from __future__ import division
 
+import itertools
+
 from tmxlib import helpers, fileio, tileset, layer
 
 
-class Map(fileio.ReadWriteBase,
-          helpers.SizeMixin, helpers.TileSizeMixin, helpers.PixelSizeMixin):
+class Map(fileio.ReadWriteBase, helpers.SizeMixin):
     """A tile map, tmxlib's core class
 
     init arguments, which become attributes:
@@ -27,18 +28,6 @@ class Map(fileio.ReadWriteBase,
         .. attribute:: background_color
 
             The background color for the map, as a triple of floats (0..1)
-
-        .. attribute:: stagger_axis
-
-            Stagger axis for hexagonal maps ('x' or 'y', or None)
-
-        .. attribute:: stagger_index
-
-            Stagger index for hexagonal maps ('odd' or 'even', or None)
-
-        .. attribute:: hex_side_length
-
-            Side length for hexagonal maps (int, or None)
 
     Other attributes:
 
@@ -79,14 +68,16 @@ class Map(fileio.ReadWriteBase,
     """
     _rw_obj_type = 'map'
 
+    tile_width, tile_height = helpers.unpacked_properties('tile_size')
+    pixel_width, pixel_height = helpers.unpacked_properties('pixel_size')
+
     # XXX: Fully implement, test, and document base_path:
     #   This should be used for saving, so that relative paths work as
     #   correctly as they can.
     #   And it's not just here...
     def __init__(self, size, tile_size, orientation='orthogonal',
             background_color=None, base_path=None,
-            render_order=None, stagger_index=None, hex_side_length=None,
-            stagger_axis=None):
+            render_order=None):
         self.orientation = orientation
         self.size = size
         self.tile_size = tile_size
@@ -96,9 +87,6 @@ class Map(fileio.ReadWriteBase,
         self.properties = {}
         self.base_path = base_path
         self.render_order = render_order
-        self.stagger_index = stagger_index
-        self.hex_side_length = hex_side_length
-        self.stagger_axis = stagger_axis
 
     @property
     def pixel_size(self):
@@ -193,6 +181,21 @@ class Map(fileio.ReadWriteBase,
         for tile in self.all_tiles():
             assert tile.gid < large_gid
 
+    def generate_draw_commands(self):
+        return itertools.chain.from_iterable(
+            layer.generate_draw_commands()
+            for layer in self.layers if layer.visible)
+
+    def render(self):
+        from tmxlib.canvas import Canvas
+        canvas = Canvas(self.pixel_size,
+                        #color=self.background_color,
+                        commands=self.generate_draw_commands())
+        return canvas
+
+    def _repr_png_(self):
+        return self.render()._repr_png_()
+
     def to_dict(self):
         """Export to a dict compatible with Tiled's JSON plugin
 
@@ -215,10 +218,13 @@ class Map(fileio.ReadWriteBase,
         return d
 
     @helpers.from_dict_method
-    def from_dict(cls, dct):
+    def from_dict(cls, dct, base_path=None):
         """Import from a dict compatible with Tiled's JSON plugin
 
         Use e.g. a JSON or YAML library to read such a dict from a file.
+
+        :param dct: Dictionary with data
+        :param base_path: Base path of the file, for loading linked resources
         """
         if dct.pop('version', 1) != 1:
             raise ValueError('tmxlib only supports Tiled JSON version 1')
@@ -227,12 +233,15 @@ class Map(fileio.ReadWriteBase,
                 tile_size=(dct.pop('tilewidth'), dct.pop('tileheight')),
                 orientation=dct.pop('orientation', 'orthogonal'),
             )
+        if base_path:
+            self.base_path = base_path
         background_color = dct.pop('backgroundcolor', None)
         if background_color:
             self.background_color = fileio.from_hexcolor(background_color)
         self.properties = dct.pop('properties')
         self.tilesets = [
-                tileset.ImageTileset.from_dict(d) for d in dct.pop('tilesets')]
+                tileset.Tileset.from_dict(d, base_path)
+                for d in dct.pop('tilesets')]
         self.layers = [
                 layer.Layer.from_dict(d, self) for d in dct.pop('layers')]
         self.properties.update(dct.pop('properties', {}))
