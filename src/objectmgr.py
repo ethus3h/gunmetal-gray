@@ -10,7 +10,7 @@ import gameobjects
 class ObjectManager:
     def __init__(self, scene):
         self.scene = scene
-        self.objects = {}
+        self.objects = {coins=[]}
 
         # Controls the order objects are updated
         self.early_update = []    # Early objects might include platforms entities can ride on
