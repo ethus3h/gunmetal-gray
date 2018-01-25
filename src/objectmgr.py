@@ -11,7 +11,7 @@ class ObjectManager:
     def __init__(self, scene):
         self.scene = scene
         self.objects = {
-            coins=[]
+            coins = []
         }
 
         # Controls the order objects are updated
