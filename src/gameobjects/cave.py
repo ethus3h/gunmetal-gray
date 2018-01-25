@@ -41,7 +41,6 @@ class Cave(GameObject):
         pass
 
     def interact(self, obj):
-        print "Interected with cave"
         obj.call("enterDoor", self.mapfile, self.spawnpoint)
 
     def debug_draw(self, surface, camera_x, camera_y):
