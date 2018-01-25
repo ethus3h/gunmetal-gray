@@ -88,7 +88,7 @@ class ObjectManager:
             if name is None or name=="":
                 name = self._auto_name()
             if hasattr(gameobjects, class_name):
-                print 'added new', class_name
+                # print 'added new', class_name
                 obj = getattr(gameobjects, class_name)(self.scene, name, x, y, **kwargs)
                 self.objects[name] = obj
                 newObjects.append(obj)

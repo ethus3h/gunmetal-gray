@@ -155,7 +155,6 @@ class Player(GameObject):
                 for obj in self.collider.iter_collide(self.obj_mgr.interactive):
                     print 'interact called for', obj
                     if obj.call("interact", self) == True:
-                        print 'interact strange state'
                         break
 
         else:
