@@ -1,6 +1,6 @@
 {
     "scale":1,
-    "fullscreen":true,
+    "fullscreen":false,
     "volume":70,
     "input":"keyboard",
     "keyboard":{
