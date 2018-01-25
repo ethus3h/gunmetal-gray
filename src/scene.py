@@ -59,7 +59,7 @@ class Scene:
         self.object_mgr.createFromTMX(tmx)
         # TODO: Load script that may have been in TMX's map properties
         # TODO: Initialize script
-        statevars.variables["map"] = self
+        statevars.variables["map"] = self.object_mgr
         self.coins=[]
     def destroy(self):
         self.object_mgr.clear()
@@ -89,6 +89,3 @@ class Scene:
 
     def get(self, name, extraVar=None):
         return []
-
-    def __getitem__():
-        return tmxlib.layers.__getitem__
