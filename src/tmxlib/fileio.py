@@ -536,8 +536,11 @@ class TMXSerializer(object):
                 opacity=float(elem.attrib.pop('opacity', 1)),
                 visible=bool(int(elem.attrib.pop('visible', 1))),
                 color=color)
-        layer_size = (int(elem.attrib.pop('width')),
+        try:
+            layer_size = (int(elem.attrib.pop('width')),
                 int(elem.attrib.pop('height')))
+        except Exception as e:
+            layer_size = map.size
         assert layer_size == map.size
         assert not elem.attrib, (
             'Unexpected object layer attributes: %s' % elem.attrib)
