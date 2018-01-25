@@ -43,7 +43,7 @@
   <object id="3" name="cave_exit" type="Cave" x="2404" y="460" width="153" height="153">
    <properties>
     <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="mapfile" value="maps/coins.tmx"/>
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
@@ -56,12 +56,5 @@
   <object id="60" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="61" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="62" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
-  <object id="63" name="cave_exit" type="Cave" x="1907.5" y="985.5" width="153" height="153">
-   <properties>
-    <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/nq2.tmx"/>
-    <property name="spawnpoint" value="cave"/>
-   </properties>
-  </object>
  </objectgroup>
 </map>

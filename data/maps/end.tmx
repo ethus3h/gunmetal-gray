@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="50" tilewidth="32" tileheight="32">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="4">
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
@@ -27,23 +27,23 @@
    eJzt1d0KgkAYhOGP0jovqY796/7vsI2U3KUCQ3dW9h14UCkPnEGszKwCAAAAACBBtdM7ndNOjv2X62Y4bwb3BJ5hy+pJr09LpBuwzbwN2n/Knhm2+b7B2I0qbPLeIpXkvklKW4zJeZNUk+smKSfHTVKPuh/28JPbO7KFqDtiDz/qjtjDj7oj9vCT0zdkK1H3xB5+1D2xhx91T+zhR91TLLelCls56p5iuToH57hMbatF3VNMF0t3l52zd06m70m1S2HabcYNSnvtcDZ9N2rTbX4pA0VwHv4vvOfTb2wAAAAAAAAAAAAAILYH4fxKjA==
   </data>
  </layer>
- <objectgroup name="Objects" width="100" height="50">
-  <object name="cave" type="Cave" x="1552" y="864" width="128" height="128">
+ <objectgroup name="Objects">
+  <object id="1" name="cave" type="Cave" x="1552" y="864" width="128" height="128">
    <properties>
     <property name="cavetype" value="entrance"/>
     <property name="mapfile" value="maps/cave.tmx"/>
     <property name="spawnpoint" value="cave_exit"/>
    </properties>
   </object>
-  <object type="NPC" x="1280" y="896" width="64" height="96">
+  <object id="2" type="NPC" x="1280" y="896" width="64" height="96">
    <properties>
     <property name="filename" value="dialogs/npc_end.json"/>
    </properties>
   </object>
-  <object name="cave_exit" type="Cave" x="1762" y="861" width="128" height="128">
+  <object id="3" name="cave_exit" type="Cave" x="1762" y="861" width="128" height="128">
    <properties>
     <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/notquite-2015oct5a6.tmx"/>
+    <property name="mapfile" value="maps/notquite.tmx"/>
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>

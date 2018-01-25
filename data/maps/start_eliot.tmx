@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="17">
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
@@ -17,24 +17,32 @@
    eJztnFlvEzEQxy1oQSAQR6EBxCEKLTxzSogHVKQiIdRPAKKU453zHSh8bjzNDriD7fhae5zMX/opm3STev33jK9NlBKV1NlMWuvywLyodz8OaY62LkRB9eoH+HDYeH5EzYcvuX4cr1xe6gNV777cUgfr97xy1/3E8tqlyuVdI883BjjprmZT8yDx/XhN1JsQavtBZfOjdXxsGuQq1pPWfrjUKm9hbCAxMQJ5eEX9X/aYWOHqB6q2L5sWQkXr9gL5e4gn3P1A1fKlpB8pnvTiB2pMX2iuislZZ5R73ETl84SDH1zm5zYvQmPE1+ZpjPjO5+AHB9HYmKi4GImdd7tiRPyYisYD9cMXI2auyo2Rmn7cUdN2eC+AJxXLRWMDNBkeQ2IkdG6RMt7iwmvl9grq5aGjbmJl8wI0MY7xb0+V3ZOY66KetK5nH761HsqqZlmNN96azD5lXyG5imKqZIzE1N/YLCl7jk5VqB8pZY2NkXOJ/2fMz2vtvS0OY2KDlt/0pKd+JNVzX6zkXD/6kpKnKKZa119pViyvlcpfs/xbCzzP50fMe1vnihzG9oTu58TUa42xVum+h5MnIKxv6oPtnBBMta6nmv6ZntRYLwv1xFRrL1Kw9ROxnlzRXNVcI/Xhej1Vof0OiI4POOYZG6uB57n6vNr7Wxcd5aD5rnTbS6mzlqT4khI/rhgxVWLsXIOxx3WPVd5aWKg/1BNfnlpkXqrpGuGWKrtGaRPmLa5ecJnTgCfb6uCa+hi+QIyU8MJ2Dx1nUn2G9f3tgR2VvnYcmsNa11PPlB6TYWz0MqYdi9zrh/4/dz+sRp/BpS8oiS1Pv9A8U9MxAPQ14M2jcCv25ZqPpFJqjjILjrGM4zHwYms4fu6od1c/UtqPRQf7/Z3h2OWHS675YY85BsaL65qbw+O65/py1ghiYvNluBV/1XuMoA8uwd9Sv2+RS8r9UjF+5Mw3XH1LbCxC/d8YuBl5rfi+EG9yrhXfa/ph6zNsr43Rbkr36+AB1H3J70q5fCm53unbl/KJc85KvaZQ+fqZXFL3Hrn6UfN+1euMys/Vj9uJ15Oq0nFC/fD1IcDyQOt6tzF2nnKJejKrP/GNf2PbU+hYg1J6j4/2/62/55AaJ6Y3Oe2JW75q7Qcodc4CMXHD+JzYfVxO+1Cc/ECF5hCcF+WIoxfc/EDhGgzOKXFtZkPFz0shZmzxUjtPhc55OfoxtrjGBlLyPk4O8vUj3L2YV0+o8PeMWtdzDC1+q+SU5qRxDDpNHk2l/G7aWDFRa09waWDZOMbnwKzf6jpG3ms7H8/Bvb77aroHC4+4Bwt7f6/IZ2EZsSxmGzqhpt6iv6BQL0rtQ9XyyOSN5u3AO817ze7wCHywnL9LzjfPea3+7bua7ESUaYk8b70eUvNeXajfz5ov5BGhfnzUfDLO/ar5Rs7B++HMe698ZejtfrSx/TC9oL5QP75rfmh+avY0vzS/GVxHChzv78D2bsYFHtvavhBOStxje98jQPtPbfsc29080mK8IQiCwIUevofXAy3vxZT5iiDwQsbwi0eP9+Nzotd+TOaRgiBQJC8IPdPzeEbWNebfY6E/eh3jCwIg6zqCIAj9IPPw+Ub65MWE69y157UHmZ8JYyP5ujw4xilZt+KTH679jyAIQq/IGFQQhBLIGC2OmDH/os8PpG0JgiAIgtCKP3eqXXw=
   </data>
  </layer>
- <objectgroup name="Objects" width="100" height="100">
-  <object type="Energy" gid="226" x="201" y="225"/>
-  <object type="Energy" gid="226" x="302" y="234"/>
-  <object type="Energy" gid="226" x="848" y="800"/>
-  <object name="emt_1" type="EMT" gid="255" x="246" y="239"/>
-  <object name="emt_2" type="EMT" gid="255" x="624" y="832"/>
-  <object type="Crawler" gid="244" x="679" y="147"/>
-  <object type="Crawler" gid="244" x="560" y="224"/>
-  <object name="coin_1" type="Coin" gid="227" x="364" y="238"/>
-  <object name="coin_2" type="Coin" gid="227" x="736" y="208"/>
-  <object name="coin_3" type="Coin" gid="227" x="1121" y="77"/>
-  <object name="coin_4" type="Coin" gid="227" x="1056" y="174"/>
-  <object name="coin_5" type="Coin" gid="227" x="1320" y="104"/>
-  <object type="Tentacle" gid="243" x="444" y="230"/>
-  <object name="door_1" type="Door" x="576" y="352" width="128" height="128">
+ <objectgroup name="Objects">
+  <object id="1" type="Energy" gid="226" x="201" y="225" width="32" height="32"/>
+  <object id="2" type="Energy" gid="226" x="302" y="234" width="32" height="32"/>
+  <object id="3" type="Energy" gid="226" x="848" y="800" width="32" height="32"/>
+  <object id="4" name="emt_1" type="EMT" gid="255" x="246" y="239" width="32" height="32"/>
+  <object id="5" name="emt_2" type="EMT" gid="255" x="624" y="832" width="32" height="32"/>
+  <object id="6" type="Crawler" gid="244" x="679" y="147" width="32" height="32"/>
+  <object id="7" type="Crawler" gid="244" x="560" y="224" width="32" height="32"/>
+  <object id="8" name="coin_1" type="Coin" gid="227" x="364" y="238" width="32" height="32"/>
+  <object id="9" name="coin_2" type="Coin" gid="227" x="736" y="208" width="32" height="32"/>
+  <object id="10" name="coin_3" type="Coin" gid="227" x="1121" y="77" width="32" height="32"/>
+  <object id="11" name="coin_4" type="Coin" gid="227" x="1056" y="174" width="32" height="32"/>
+  <object id="12" name="coin_5" type="Coin" gid="227" x="1320" y="104" width="32" height="32"/>
+  <object id="13" type="Tentacle" gid="243" x="444" y="230" width="32" height="32"/>
+  <object id="14" name="door_1" type="Door" x="576" y="352" width="128" height="128">
    <properties>
     <property name="mapfile" value="maps/start.tmx"/>
     <property name="spawnpoint" value="door_1"/>
+   </properties>
+  </object>
+  <object id="15" name="coin_2" type="Coin" gid="227" x="1877.33" y="701.333" width="32" height="32"/>
+  <object id="16" name="cave_exit" type="Cave" x="1085.33" y="1557.33" width="128" height="128">
+   <properties>
+    <property name="cavetype" value="exit"/>
+    <property name="mapfile" value="maps/end.tmx"/>
+    <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
  </objectgroup>
