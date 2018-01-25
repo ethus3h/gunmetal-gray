@@ -26,6 +26,8 @@ class Scene:
         # Load TMX file
         tmx = tmxlib.Map.open(assets.path(filename))
 
+        print 'Started map:', filename
+
         # Initialize variables using TMX map properties
         # Properties used in maps are:
         #   name          - The name of the map
