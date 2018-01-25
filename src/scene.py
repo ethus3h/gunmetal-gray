@@ -90,5 +90,5 @@ class Scene:
     def get(self, name, extraVar=None):
         return []
 
-    def __getitem__:
+    def __getitem__():
         return tmxlib.layers.__getitem__
