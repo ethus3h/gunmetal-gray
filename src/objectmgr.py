@@ -38,6 +38,10 @@ class ObjectManager:
         """Get an object by name"""
         return self.objects.get(name)
 
+    def get(self, name, list):
+        """Get an object by name"""
+        return [self.objects.get(name)]
+
     def add(self, name, obj):
         """Add an object to the object manager"""
         if name is None:
