@@ -41,6 +41,7 @@ class SpriteCollide(pygame.sprite.Sprite):
             spr.touch(self.gameobject, self,  *args, **kwargs)
 
     def iter_collide(self, group):
+        print 'iter_collide called on group of', group.__len__
         for spr in pygame.sprite.spritecollide(self, group, False):
             print spr
             yield spr.gameobject
