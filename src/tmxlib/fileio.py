@@ -554,8 +554,8 @@ class TMXSerializer(object):
                 kwargs = dict(
                         layer=layer,
                     )
-                x = int(round(subelem.attrib.pop('x')))
-                y = int(round(subelem.attrib.pop('y')))
+                x = int(round(float(subelem.attrib.pop('x'))))
+                y = int(round(float(subelem.attrib.pop('y'))))
 
                 def put(attr_type, attr_name, arg_name):
                     attr = subelem.attrib.pop(attr_name, None)
