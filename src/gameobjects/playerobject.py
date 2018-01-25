@@ -151,9 +151,9 @@ class Player(GameObject):
                 self.jump_timer = self.max_jump_timer+td
 
             if inputs.getInteractPress():
-                print 'pressed interact'
+                #print 'pressed interact'
                 for obj in self.collider.iter_collide(self.obj_mgr.interactive):
-                    print 'interact called for', obj
+                    #print 'interact called for', obj
                     if obj.call("interact", self) == True:
                         break
 
