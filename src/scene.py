@@ -87,5 +87,5 @@ class Scene:
     def debug_draw(self, surface):
         self.object_mgr.debug_draw(surface, int(-self.camera.x), int(-self.camera.y))
 
-    def get(self, name):
+    def get(self, name, extraVar=None):
         return None
