@@ -152,9 +152,10 @@ class Player(GameObject):
 
             if inputs.getInteractPress():
                 print 'pressed interact'
-                for obj in self.collider.iter_collide(self.obj_mgr.interactive):
+                for obj in self.collider.iter_collide():
+                    print 'interact called'
                     if obj.call("interact", self) == True:
-                        print 'interact called'
+                        print 'interact inner'
                         break
 
         else:
