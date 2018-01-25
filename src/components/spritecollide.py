@@ -45,6 +45,7 @@ class SpriteCollide(pygame.sprite.Sprite):
     def iter_print(self, group):
         for spr in pygame.sprite.spritecollide(self, group, False):
             print spr
+            yield spr.gameobject
 
     def debug_draw(self, surface, camera_x, camera_y):
         pygame.draw.rect(surface, (255,0,255), (self.rect[0] + camera_x, self.rect[1] + camera_y, self.rect[2], self.rect[3]), 1)
