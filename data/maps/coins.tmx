@@ -45,7 +45,7 @@
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
-  <object id="17" name="spawn" type="Door" x="992" y="293.333" width="128" height="128">
+  <object id="17" name="spawn" type="Door" x="32" y="226.333" width="128" height="128">
    <properties>
     <property name="mapfile" value="maps/start.tmx"/>
     <property name="spawnpoint" value="door_1"/>
