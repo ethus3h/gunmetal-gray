@@ -60,7 +60,7 @@ class Scene:
         # TODO: Load script that may have been in TMX's map properties
         # TODO: Initialize script
         statevars.variables["map"] = self
-        statevars.variables["map"]
+        self.coins=[]
     def destroy(self):
         self.object_mgr.clear()
 
