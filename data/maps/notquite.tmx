@@ -44,7 +44,7 @@
    <properties>
     <property name="cavetype" value="exit"/>
     <property name="mapfile" value="maps/coins.tmx"/>
-    <property name="spawnpoint" value="cave"/>
+    <property name="spawnpoint" value="spawn"/>
    </properties>
   </object>
   <object id="4" name="outhouse" type="Outhouse" x="1040" y="802" width="128" height="160"/>
