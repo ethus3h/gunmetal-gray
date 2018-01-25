@@ -14,6 +14,7 @@ import assets
 import tilemap
 import objectmgr
 import music
+import statevars
 
 from gameobjects import Camera
 
@@ -58,7 +59,8 @@ class Scene:
         self.object_mgr.createFromTMX(tmx)
         # TODO: Load script that may have been in TMX's map properties
         # TODO: Initialize script
-
+        statevars.variables["map"] = self
+        statevars.variables["map"]
     def destroy(self):
         self.object_mgr.clear()
 
