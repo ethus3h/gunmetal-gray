@@ -1,1 +1,1 @@
-{"spawn": "outhouse", "gold": 0, "maps": {"maps/original.tmx": {"events": []}, "maps/house.tmx": {"events": []}, "maps/start.tmx": {"events": []}}, "health": 100000, "inventory": [], "events": [], "ammo": 25, "map_file": "maps/house.tmx"}
+{"spawn": "outhouse", "gold": 0, "maps": {"maps/original.tmx": {"events": []}, "maps/start.tmx": {"events": []}, "maps/house.tmx": {"events": []}}, "health": 100000, "inventory": [], "events": [], "ammo": 25, "map_file": "maps/house.tmx"}

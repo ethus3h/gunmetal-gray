@@ -43,9 +43,9 @@ class SpriteCollide(pygame.sprite.Sprite):
     def iter_collide(self, group):
         print 'iter_collide called on group of', group.__len__
         for spr in group:
-            print spr, 'is object in group'
+            print spr.gameobject, 'is object in group'
         for spr in pygame.sprite.spritecollide(self, group, False):
-            print spr
+            print spr.gameobject
             yield spr.gameobject
 
     def debug_draw(self, surface, camera_x, camera_y):
