@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="17">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="18">
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
@@ -43,6 +43,12 @@
     <property name="cavetype" value="exit"/>
     <property name="mapfile" value="maps/end.tmx"/>
     <property name="spawnpoint" value="cave"/>
+   </properties>
+  </object>
+  <object id="17" name="spawn" type="Door" x="992" y="293.333" width="128" height="128">
+   <properties>
+    <property name="mapfile" value="maps/start.tmx"/>
+    <property name="spawnpoint" value="door_1"/>
    </properties>
   </object>
  </objectgroup>
