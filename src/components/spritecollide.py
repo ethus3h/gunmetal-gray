@@ -19,7 +19,7 @@ class SpriteCollide(pygame.sprite.Sprite):
         self.rect = pygame.Rect(gameobject.x + offset_x, gameobject.y + offset_y, width, height)
 
     def addToGroup(self, group):
-        print 'Added', self.gameobject, 'to', group.name
+        print 'Added', self.gameobject, 'to', group, 'with', group.__len__
         group.add(self)
 
     def removeFromGroup(self, group):
