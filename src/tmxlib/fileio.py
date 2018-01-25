@@ -192,7 +192,10 @@ class TMXSerializer(object):
         hex_side_length = root.attrib.pop('hexsidelength', None)
         if hex_side_length:
             args['hex_side_length'] = int(hex_side_length)
-        root.attrib.pop('tiledversion') # Drop newer attribute
+        try:
+            root.attrib.pop('tiledversion') # Drop newer attribute
+        except:
+            pass
         assert not root.attrib, 'Unexpected map attributes: %s' % root.attrib
         map = cls(**args)
         for elem in root:
