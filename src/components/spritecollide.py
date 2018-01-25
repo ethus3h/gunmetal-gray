@@ -40,10 +40,6 @@ class SpriteCollide(pygame.sprite.Sprite):
 
     def iter_collide(self, group):
         for spr in pygame.sprite.spritecollide(self, group, False):
-            yield spr.gameobject
-
-    def iter_print(self, group):
-        for spr in pygame.sprite.spritecollide(self, group, False):
             print spr
             yield spr.gameobject
 
