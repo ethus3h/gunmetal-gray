@@ -6,12 +6,12 @@
     "keyboard":{
         "left":"left",
         "right":"right",
-        "up":"z",
+        "up":"period",
         "down":"down",
         "jump":"up",
         "fire":"a",
         "pause":"space",
-        "interact":"return"
+        "interact":"o"
     },
     "joystick":{
         "stick_id":0,
