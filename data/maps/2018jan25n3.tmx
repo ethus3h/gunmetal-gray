@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="64">
+ <properties>
+  <property name="camera_x" value="112"/>
+  <property name="camera_y" value="176"/>
+  <property name="music" value="music/scene_town.mp3"/>
+ </properties>
+ <tileset firstgid="1" source="tileset.tsx"/>
+ <layer name="Tile Layer 3" width="100" height="50">
+  <properties>
+   <property name="parallax" value="0.7"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   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
+  </data>
+ </layer>
+ <layer name="Background" width="100" height="50">
+  <properties>
+   <property name="parallax" value="1"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJzt2EsKgDAMQMHiFbyrZ1ZPYTfuFPoNKDOQdSCPbpoSAAAAAAD83xq4a89z5DkDd37NiB7uDABAqW15HuK9tdAlXkkLTeLU9NBkrtoWeszV0kOTOVpb6DFHTw9Nxuptcffw3z2GdwEAAAAAAAD8yQVfqkRY
+  </data>
+ </layer>
+ <layer name="Foreground" width="100" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztm89u1DAQxmdRAcGNKoKC4LLdtueCeIA+QpHgIbiuXxJx5IC48g7csUUsptMZe8Z/1lslnzRKNhnb4+8X7ya77QQA08LCoRhdy9LDgY3Hyqwvh4lsc35rufWqdYRPPet3zHlpX6ptpDeHHLvVeBpPU7nSMS23nv7gWnryaTFXq2fSfDT9jOLB1dyajTRGKU/t8dQYGh4jmOTGrmWT67uGRc7Pmtos9fXkUlN/j/mWMGvF+SEwwT7nvC6d79bHJerjwsduPrZjXp+T/JY8joWJlUtNzQ75GgLmYyWK7S7muEqMaalvJI/SGixcwhrYzYF9pPslinVEUTalczsGJtY6XKLdFnmT8rGGR679lWFOAHfnNZpHTR2UyVbpZY00LMN56T2M4wFQ78Wx8LCwwH6VStM25miYREnX2EPlYVUJEwuLqByTqBZ+tGJhHZ9rY1Xsw5JfmmdlMppHC35WWXhY8qRcDY+YV3KNjuDh0FZaH898PFd41ppFLle7Rn5u2jCJz7u9WUivo177eJPwq5W/JX1rePzwPP5s/vkZ+gscr/3rTz5u5+31Js9BM2YpDykPH8/55MhrjVqzy80zKPK4Qv3StRWfczk/rGPithoeuZx4XvKIq1HjnYWFNl/jy++ZB+5X6ptyquXRKofWoVkDqRwrC600zyPh2r+Bu9dYqp74HeelkNeKh4YFZaLhQCXx7KXcXHBeqsaoGxS9eFhYpNaJVk7Y76Hc2gjb/Zz73scHHx9Bv+a1Y/Vkga+lUpWuL6tytWMeX3x8nrf4mpPmS2vnPvMtnpeyaMEjzmfU+gjaoy2e0x4ds/BIjZfzvYZFiLOsE8chDY+J5GMe0SvaJzDHU+OlvK9lEeKVjyc+nuYtGSrN+qaMJB54Gz28VY4n+d+CRYyXcPxcTkHmwb0PRRYAdz2TfMOy+teSBcflBMayecQc4+rdCsfx2sBtOd/o9yQAtu+verFIsUnFYxInZJ/m0TbcuVMljyj8vEhZxLbc2kj9FqdlcSgeo0PjzxlzXvrcoN7lfhddWdh5TOQ8XhccD6n/r+T1u0xtS2NRy2MCGw9OK4v/wb2XSLn4PWsP99+v8O8hqf6DvqHvh1M8Rvtz6KDStMEMsIJ/b4mPkn55Ht83+jGXEPTatbCgPMJ+WD+BxQuUn1K89x3tw7EEVY5b5ICfGc5IW5cYA+c4xbhLCu3nBs3j7nGp11Jb63WwpNB4In0Wc304uH8/lOrfoXajvRgdmrWhfZ5O9aE5t3QeORbh/DmTg0V/Y+f6yt0rBDlYeXDKnefE/d0DAN8PV4eDlUdqbXDrIt63Sr+jhXzp71G4MSgPgOXykD4P8P/GYeFniBQTjSQeS2UxGf2jLLjQ8kn1sWQeWi4aFhYuK48yJlYOEhdLm5XH4Vhb2/0Fkn/MLA==
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" name="cave" type="Cave" x="2591" y="672" width="128" height="128" visible="0">
+   <properties>
+    <property name="cavetype" value="entrance"/>
+    <property name="mapfile" value="maps/end.tmx"/>
+    <property name="spawnpoint" value="cave_exit"/>
+   </properties>
+  </object>
+  <object id="2" type="NPC" x="1280" y="896" width="64" height="96">
+   <properties>
+    <property name="filename" value="dialogs/npc_end.json"/>
+   </properties>
+  </object>
+  <object id="3" name="cave_exit" type="Cave" x="2404" y="460" width="153" height="153">
+   <properties>
+    <property name="cavetype" value="exit"/>
+    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="spawnpoint" value="cave"/>
+   </properties>
+  </object>
+  <object id="4" name="outhouse" type="Outhouse" x="1040" y="802" width="128" height="160"/>
+  <object id="55" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="56" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="57" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="58" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="59" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="60" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="61" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="62" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="63" name="cave_exit" type="Cave" x="1907.5" y="985.5" width="153" height="153">
+   <properties>
+    <property name="cavetype" value="exit"/>
+    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="spawnpoint" value="cave"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
