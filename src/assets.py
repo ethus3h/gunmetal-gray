@@ -143,4 +143,3 @@ def saveData(data, filename):
     file = load(path(filename), "wt")
     json.dump(data, file)
     file.close()
-
