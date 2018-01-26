@@ -24,8 +24,11 @@ class Coin(GameObject):
         #self.obj_mgr.normal_update.append(self)
         self.collider.addToGroup(self.obj_mgr.player_touchable)
         # If this coin has already been collected, remove it from the map.
-        if self.name in statevars.variables[coins]:
-            self.kill()
+        try:
+            if self.name in statevars.variables[coins]:
+                self.kill()
+        except:
+            pass
 
     def destroy(self):
         """Clean up code."""
