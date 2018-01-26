@@ -84,6 +84,8 @@ class PlayState(State):
                 obj.call("spawnPlayer")
             else:
                 print spawn, "is not a valid spawn point"
+        self.max_coins = int(self.scene.properties.get("coins", 0))
+        self.updateCoins()
 
     def gainFocus(self, previous, previous_name, respawn=False,*args, **kwargs):
         """What should be done when the state gets focus.  Previous is the state that had focus before this one."""
@@ -109,6 +111,8 @@ class PlayState(State):
 
         # Energy bar and coins amount
         self.energy_bar.draw(surface)
+        surface.blit(self.coin_img, (150, 5))
+        surface.blit(self.coin_txt, (160, 5))
 
     def debug_draw(self, surface):
         self.scene.debug_draw(surface)
