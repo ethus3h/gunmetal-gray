@@ -40,7 +40,7 @@
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
-  <object id="4" name="outhouse" type="Outhouse" x="2692" y="480" width="128" height="160"/>
+  <object id="4" name="outhouse" type="Outhouse" x="2588" y="800" width="128" height="160"/>
   <object id="55" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="56" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="57" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
