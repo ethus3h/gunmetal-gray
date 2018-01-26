@@ -30,6 +30,15 @@ class PlayState(State):
         """Link up player object with the health bar"""
         self.energy_bar.setHealth(player.health)
 
+    def getCoin(self):
+        """Get a coin.  Called by player when it touches a coin object."""
+        self.coins += 1
+        self.updateCoins()
+
+    def updateCoins(self):
+        """Change display for how many coins have been collected"""
+        self.coin_txt = assets.getFont(None, 10).render(str(self.coins)+" / "+str(self.max_coins), False, (255,255,255))
+
     def respawn(self):
         """Reload the level when the player respawns"""
         statevars.load()
