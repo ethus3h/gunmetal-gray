@@ -31,8 +31,8 @@
   <object id="1" name="cave" type="Cave" x="1552" y="864" width="128" height="128">
    <properties>
     <property name="cavetype" value="entrance"/>
-    <property name="mapfile" value="maps/end.tmx"/>
-    <property name="spawnpoint" value="cave_exit"/>
+    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="spawnpoint" value="cave_enter"/>
    </properties>
   </object>
   <object id="2" type="NPC" x="1280" y="896" width="64" height="96">
