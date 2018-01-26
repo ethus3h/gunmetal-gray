@@ -44,10 +44,10 @@ class Coin(GameObject):
         self.sound.play()
         self.kill()
         # Keep track of this coin being collected so it will stay gone after saving and loading.
-        if statevars.variables["map"].get("coins") == None:
-            statevars.variables["map"]["coins"] = [self.name]
+        if statevars.variables.get("coins") == None:
+            statevars.variables.get("coins") = [self.name]
         else:
-            statevars.variables["map"]["coins"].append(self.name)
+            statevars.variables["coins"].append(self.name)
         statemgr.get("play").getCoin()
 
     def debug_draw(self, surface, camera_x, camera_y):
