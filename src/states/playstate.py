@@ -86,6 +86,7 @@ class PlayState(State):
             else:
                 print spawn, "is not a valid spawn point"
         self.max_coins = int(self.scene.properties.get("coins", 0))
+        self.coins = len(map.get("coins", []))
         self.updateCoins()
 
     def gainFocus(self, previous, previous_name, respawn=False,*args, **kwargs):
