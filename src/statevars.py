@@ -18,6 +18,8 @@ empty_file = {
     "gold": 0,    # Gold the player has collected
     "ammo": 25,   # Ammunition they player has
 
+    "coins": [],  # Items the player has collected
+
     "inventory": [],  # Items the player has collected
     "events": [],     # Events that have taken place over the course of the game (can be used to track story progress)
 
