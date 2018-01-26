@@ -12,6 +12,7 @@ import energybar
 import statevars
 import pygame
 import music
+import assets
 import statemgr
 
 class PlayState(State):
