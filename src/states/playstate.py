@@ -19,6 +19,11 @@ class PlayState(State):
         super(PlayState, self).__init__()
         self.init = True
         self.help_text="dialogs/intro.json"
+        self.coins = 0
+        self.max_coins = 0
+        self.coin_img = assets.getImage("graphics/mini_coin.png")
+        self.next_map = None
+        self.updateCoins()
         self.scene = None
 
     def setPlayer(self, player):
