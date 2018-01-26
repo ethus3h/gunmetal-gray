@@ -29,7 +29,7 @@ class EMT(GameObject):
         self.obj_mgr.normal_update.append(self)
         self.obj_mgr.solid.add(self.collider)
         self.obj_mgr.player_touchable.add(self.save_collider)
-        spawn = statevars.variables["maps"]["filename"].get("spawn")
+        spawn = statevars.variables["maps"].get("filename").get("spawn")
         if spawn == self.name:
             self.glow.setVisibility(True)
 
