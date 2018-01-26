@@ -29,7 +29,7 @@ class EMT(GameObject):
         self.obj_mgr.normal_update.append(self)
         self.obj_mgr.solid.add(self.collider)
         self.obj_mgr.player_touchable.add(self.save_collider)
-        spawn = statevars.variables["maps"].get("filename").get("spawn")
+        spawn = statevars.variables.get("map_file").get("spawn")
         if spawn == self.name:
             self.glow.setVisibility(True)
 
@@ -52,7 +52,7 @@ class EMT(GameObject):
         """Saves if the timer has already run down."""
         if self.save_timer < 0:
             # Deactivate old EMT
-            old_spawn = statevars.variables["maps"].get("filename").get("spawn")
+            old_spawn = statevars.variables.get("map_file").get("spawn")
             if old_spawn is not None:
                 self.obj_mgr.get(old_spawn).call("deactivate")
 
@@ -64,7 +64,7 @@ class EMT(GameObject):
             self.save_timer = self.save_delay
 
             # Set the new map spawn point and save the state variables
-            statevars.variables["maps"].get("filename")["spawn"] = self.name
+            statevars.variables.get("map_file").get("spawn") = self.name
             statevars.save()
 
     def spawnPlayer(self):
