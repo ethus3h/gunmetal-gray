@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="63">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="100" height="50" tilewidth="32" tileheight="32" nextobjectid="64">
  <properties>
   <property name="camera_x" value="112"/>
   <property name="camera_y" value="176"/>
@@ -56,5 +56,12 @@
   <object id="60" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="61" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="62" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
+  <object id="63" name="cave_enter" type="Cave" x="2499.5" y="581.5" width="153" height="153">
+   <properties>
+    <property name="cavetype" value="exit"/>
+    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="spawnpoint" value="cave"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
