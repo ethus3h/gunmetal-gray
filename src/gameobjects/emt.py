@@ -52,7 +52,7 @@ class EMT(GameObject):
         """Saves if the timer has already run down."""
         if self.save_timer < 0:
             # Deactivate old EMT
-            old_spawn = statevars.variables.get("map_file").get("spawn")
+            old_spawn = statevars.variables.get("map_file")["spawn"]
             if old_spawn is not None:
                 self.obj_mgr.get(old_spawn).call("deactivate")
 
@@ -64,7 +64,7 @@ class EMT(GameObject):
             self.save_timer = self.save_delay
 
             # Set the new map spawn point and save the state variables
-            statevars.variables.get("map_file").get("spawn") = self.name
+            statevars.variables.get("map_file")["spawn"] = self.name
             statevars.save()
 
     def spawnPlayer(self):
