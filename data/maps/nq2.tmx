@@ -40,7 +40,7 @@
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
-  <object id="4" name="outhouse" type="Outhouse" x="1040" y="802" width="128" height="160"/>
+  <object id="4" name="outhouse" type="Outhouse" x="2692" y="480" width="128" height="160"/>
   <object id="55" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="56" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="57" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
@@ -51,9 +51,9 @@
   <object id="62" type="Energy" x="2505.5" y="604.5" width="43" height="63"/>
   <object id="63" name="cave_enter" type="Cave" x="2499.5" y="581.5" width="153" height="153">
    <properties>
-    <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/nq2.tmx"/>
-    <property name="spawnpoint" value="cave"/>
+    <property name="cavetype" value="entrance"/>
+    <property name="mapfile" value="maps/coins.tmx"/>
+    <property name="spawnpoint" value="cave_exit"/>
    </properties>
   </object>
  </objectgroup>

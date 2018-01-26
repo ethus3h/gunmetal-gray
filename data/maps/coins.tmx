@@ -33,16 +33,16 @@
   <object id="13" type="Tentacle" gid="243" x="444" y="230" width="32" height="32"/>
   <object id="14" name="door_1" type="Door" x="576" y="352" width="128" height="128">
    <properties>
-    <property name="mapfile" value="maps/nq2.tmx"/>
-    <property name="spawnpoint" value="cave_enter"/>
+    <property name="mapfile" value="maps/notquite.tmx"/>
+    <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
   <object id="15" name="coin_6" type="Coin" gid="227" x="1877.33" y="701.333" width="32" height="32"/>
   <object id="16" name="cave_exit" type="Cave" x="1085.33" y="1557.33" width="128" height="128">
    <properties>
     <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/end.tmx"/>
-    <property name="spawnpoint" value="cave"/>
+    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="spawnpoint" value="cave_enter"/>
    </properties>
   </object>
   <object id="17" name="spawn" type="Door" x="32" y="226.333" width="128" height="128">
