@@ -45,7 +45,7 @@ class Coin(GameObject):
         self.kill()
         # Keep track of this coin being collected so it will stay gone after saving and loading.
         if statevars.variables.get("coins") == None:
-            statevars.variables.get("coins") = [self.name]
+            statevars.variables["coins"] = [self.name]
         else:
             statevars.variables["coins"].append(self.name)
         statemgr.get("play").getCoin()
