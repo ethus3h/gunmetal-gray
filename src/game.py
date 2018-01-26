@@ -17,8 +17,8 @@ class Game:
     def __init__(self):
         self.config = assets.getData("config.json")
         self.scale = self.config["scale"]
-        self.width = round(metrics.SCREEN_WIDTH * self.scale)
-        self.height = round(metrics.SCREEN_HEIGHT * self.scale)
+        self.width = int(round(metrics.SCREEN_WIDTH * self.scale))
+        self.height = int(round(metrics.SCREEN_HEIGHT * self.scale))
 
         assets.setVolume(float(self.config["volume"]) / 100.0)
 
