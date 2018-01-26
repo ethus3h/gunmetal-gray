@@ -64,7 +64,7 @@ class EMT(GameObject):
             self.save_timer = self.save_delay
 
             # Set the new map spawn point and save the state variables
-            statevars.variables.get("spawn") = self.name
+            statevars.variables["spawn"] = self.name
             statevars.save()
 
     def spawnPlayer(self):
