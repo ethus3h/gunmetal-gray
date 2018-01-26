@@ -41,7 +41,7 @@ class Player(GameObject):
         self.solidcollider = components.SolidCollider(self, scene.tilemap.foreground, self.obj_mgr.solid, -16, -20, 28, 82)
         self.collider = components.SpriteCollide(self, -16, -20, 28, 82)
         self.physics = components.Physics(self, self.solidcollider, 0.03)
-        self.health = components.Health(self, 100000)
+        self.health = components.Health(self, 100) # default: 100
 
         self.sound_hurt = assets.getSound("sounds/hurt.wav")
         self.sound_die = assets.getSound("sounds/die.wav")
