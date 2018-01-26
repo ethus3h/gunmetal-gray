@@ -28,13 +28,6 @@
   </data>
  </layer>
  <objectgroup name="Objects">
-  <object id="1" name="cave" type="Cave" x="2591" y="672" width="128" height="128" visible="0">
-   <properties>
-    <property name="cavetype" value="entrance"/>
-    <property name="mapfile" value="maps/end.tmx"/>
-    <property name="spawnpoint" value="cave_exit"/>
-   </properties>
-  </object>
   <object id="2" type="NPC" x="1280" y="896" width="64" height="96">
    <properties>
     <property name="filename" value="dialogs/npc_end.json"/>
@@ -43,7 +36,7 @@
   <object id="3" name="cave_exit" type="Cave" x="1118.33" y="364" width="153" height="153">
    <properties>
     <property name="cavetype" value="exit"/>
-    <property name="mapfile" value="maps/nq2.tmx"/>
+    <property name="mapfile" value="maps/nq3.tmx"/>
     <property name="spawnpoint" value="cave"/>
    </properties>
   </object>
