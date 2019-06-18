@@ -1,0 +1,18 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	autocrlf = false
+[remote "origin"]
+	url = https://github.com/ethus3h/gunmetal-gray.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "old"]
+	url = /var/vcs/repos/git
+	fetch = +refs/heads/*:refs/remotes/old/*
+[branch "svndump-imported-2018jan25"]
+	remote = origin
+	merge = refs/heads/svndump-imported-2018jan25
